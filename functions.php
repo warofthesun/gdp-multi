@@ -155,7 +155,7 @@ function starter_theme_customizer($wp_customize) {
   // $wp_customize->remove_control('blogdescription');
 
   // Uncomment the following to change the default section titles
-  // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
+    $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
@@ -168,7 +168,7 @@ function theme_get_customizer_css() {
     if ( ! empty( $text_color ) ) {
       ?>
       body {
-        color: <?php echo $text_color; ?> !important;
+        color: <?php echo $text_color; ?>;
       }
       <?php
     }
@@ -179,7 +179,7 @@ function theme_get_customizer_css() {
 
 
 function theme_enqueue_styles() {
-  wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+  wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri().'/library/css/style.css' ); // This is where you enqueue your theme's main stylesheet
   $custom_css = theme_get_customizer_css();
   wp_add_inline_style( 'theme-styles', $custom_css );
 }
