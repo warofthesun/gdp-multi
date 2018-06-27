@@ -2019,7 +2019,7 @@ POSTS & CONTENT STYLES
           align-items: center; }
   .hero--text {
     margin-top: -3em;
-    text-shadow: 1px 1px 1px #055969; }
+    text-shadow: 1px 1px 1px #084854; }
   .hero--line-one {
     font-family: "Gruppo", cursive;
     display: block;
@@ -2131,12 +2131,12 @@ div[class^="content_section--"] {
   .content_section--testimonials .testimonial--client-name {
     font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
-    color: #055969;
+    color: #084854;
     font-size: 1.5em; }
   .content_section--testimonials .testimonial--client-title {
     font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 200;
-    color: #055969;
+    color: #084854;
     font-size: 1.2em; }
 
 #carousel {
@@ -2200,7 +2200,7 @@ i#next {
   margin-right: -17px; }
 
 i#prev:hover, i#next:hover {
-  color: #055969; }
+  color: #084854; }
 
 .quoteContainer {
   display: table;
@@ -2574,7 +2574,7 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #1BA8C4;
+  background-color: #12abc9;
   color: #f4f6f7;
   min-height: 200px;
   -webkit-box-align: center;
@@ -2598,7 +2598,7 @@ FOOTER STYLES
       transition: all .5s;
       margin: 0 .3em; }
       .footer .social_platforms a:hover {
-        color: #055969; }
+        color: #084854; }
 
 /*
 	if you checked out the link above:
@@ -2766,13 +2766,13 @@ GENERAL STYLES
   .hero {
     min-height: 400px; }
     .hero--text {
-      text-shadow: 0px 0px 0px #055969; }
+      text-shadow: 0px 0px 0px #084854; }
     .hero--line-one {
       font-size: 80px;
-      color: #055969; }
+      color: #084854; }
     .hero--line-two {
       font-size: 72px;
-      color: #055969; }
+      color: #084854; }
     .hero--logo-bar {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; }
@@ -2832,7 +2832,7 @@ NAVIGATION STYLES
         .nav li a:hover, .nav li a:focus {
           text-decoration: none;
           color: #fff;
-          text-shadow: 1px 1px #055969;
+          text-shadow: 1px 1px #084854;
           font-size: 1.2em;
           font-weight: bold;
           letter-spacing: -.1px; }

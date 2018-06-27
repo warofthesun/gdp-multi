@@ -34,10 +34,10 @@ $text-color:        #5c6b80 !default;
 
 $accent:            #A09420 !default;
 
-$lt-primary:        #E3FAFF !default;
 $primary:           #3BD0ED !default;
-$md-primary:        #1BA8C4 !default;
-$dark-primary:      #055969 !default;
+$lt-primary:        lighten($primary, 20%) !default;
+$md-primary:        darken($primary, 15%) !default;
+$dark-primary:      darken($primary, 40%) !default;
 
 $gradient-1:        rgba(53, 160, 182, 0.55) !default;
 $gradient-2:        rgba(2, 84, 100, 0.51) !default;

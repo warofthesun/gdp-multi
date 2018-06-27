@@ -285,13 +285,13 @@ GENERAL STYLES
 .hero {
   min-height: 400px; }
   .hero--text {
-    text-shadow: 0px 0px 0px #055969; }
+    text-shadow: 0px 0px 0px #084854; }
   .hero--line-one {
     font-size: 80px;
-    color: #055969; }
+    color: #084854; }
   .hero--line-two {
     font-size: 72px;
-    color: #055969; }
+    color: #084854; }
   .hero--logo-bar {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap; }
@@ -357,7 +357,7 @@ NAVIGATION STYLES
       .nav li a:hover, .nav li a:focus {
         text-decoration: none;
         color: #fff;
-        text-shadow: 1px 1px #055969;
+        text-shadow: 1px 1px #084854;
         font-size: 1.2em;
         font-weight: bold;
         letter-spacing: -.1px; }
