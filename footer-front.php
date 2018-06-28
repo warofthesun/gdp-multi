@@ -1,19 +1,20 @@
 			<footer class="footer row" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-				<?php $custom_query = new WP_Query('pagename=footer-information');
+				<?php $custom_query = new WP_Query('pagename=site-options');
 				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 				<div id="inner-footer" class="wrap row">
-					<?php
-						$attachment_id = get_field('footer_logo');
-						$size = "medium"; // (thumbnail, medium, large, full or custom size)
-						$image = wp_get_attachment_image_src( $attachment_id, $size );
-						// url = $image[0];
-						// width = $image[1];
-						// height = $image[2];
-					?>
-					<?php if( get_field('footer_logo')): ?>
+					<?php if( get_field('secondary_logo')): ?>
+
+
 						<div class="col-xs-12 col-md-3 footer_logo">
-							<img src="<?php echo $image[0]; ?>">
+							<img src="<?php the_field('secondary_logo') ?>">
 						</div>
+					<?php elseif( get_field('primary_logo') ): ?>
+						<div class="col-xs-12 col-md-3 footer_logo">
+							<img src="<?php the_field('primary_logo') ?>">
+						</div>
+
+					<?php else: ?>
+						<!--nothing-->
 					<?php endif; ?>
 
 					<div class="col-xs-12 col-md-9">
@@ -54,11 +55,12 @@
 								?>
 					</div>
 
+
 				</div>
 
 			</footer>
 
-
+		</div>
 		<?php endwhile; ?>
 		<?php // all js scripts are loaded in library/starter.php ?>
 		<?php wp_footer(); ?>

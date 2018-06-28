@@ -1,5 +1,5 @@
 <!--front-page-->
-<?php get_header(); ?>
+<?php get_header('front'); ?>
 
 			<div id="content">
 
@@ -234,4 +234,4 @@
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); // reset the query ?>
 
-<?php get_footer(); ?>
+<?php get_footer('front'); ?>

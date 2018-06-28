@@ -4,7 +4,7 @@
 */
 ?>
 <!--page-fullwidth-->
-<?php get_header('inner'); ?>
+<?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<header class="article-header">
 
@@ -45,4 +45,4 @@
 			</div>
 
 
-<?php get_footer('inner'); ?>
+<?php get_footer(); ?>
