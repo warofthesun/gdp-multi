@@ -14,38 +14,39 @@
 									<p>IT Network Today keeps IT professionals and tech leaders up-to-date on the latest developments and movements in business technology, collated from the leading sources in the industry.</p>
 								</div>
 								<div class="hero--content_articles row">
-									<h2 class="col-sm-12">latest content</h2>
+									<h2 class="col-xs-12">latest content</h2>
 									<div class="col-sm-4 article__thumbnail">
 										<div class="article__thumbnail--container">
 											<div class="article__thumbnail--background-image"></div>
-											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+
 											<div class="article__thumbnail--overlay">
 												<div class="reveal"></div>
-												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
 												<a href="#" class="primary-btn">Learn More</a>
 											</div>
+											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 										</div>
 									</div>
 									<div class="col-sm-4 article__thumbnail">
 										<div class="article__thumbnail--container">
-											<div class="article__thumbnail--background-image"></div>
-											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 											<div class="article__thumbnail--overlay">
 												<div class="reveal"></div>
-												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
 												<a href="#" class="primary-btn">Learn More</a>
 											</div>
+											<div class="article__thumbnail--background-image"></div>
+											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 										</div>
 									</div>
 									<div class="col-sm-4 article__thumbnail">
 										<div class="article__thumbnail--container">
-											<div class="article__thumbnail--background-image"></div>
-											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 											<div class="article__thumbnail--overlay">
 												<div class="reveal"></div>
-												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
 												<a href="#" class="primary-btn">Learn More</a>
 											</div>
+											<div class="article__thumbnail--background-image"></div>
+											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 										</div>
 									</div>
 								</div>
@@ -77,72 +78,72 @@
 		<section class="articles wrap" style="max-Width:1035px;margin-bottom:3rem;">
 				<h2>All articles</h2>
 				<div class="row">
-				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
-					<div class="article__thumbnail--container">
-						<div class="article__thumbnail--background-image"></div>
-						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
-						<div class="article__thumbnail--overlay">
-							<div class="reveal"></div>
-							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
-							<a href="#" class="primary-btn">Learn More</a>
+					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+						<div class="article__thumbnail--container">
+							<div class="article__thumbnail--overlay">
+								<div class="reveal"></div>
+								<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+								<a href="#" class="primary-btn">Learn More</a>
+							</div>
+							<div class="article__thumbnail--background-image"></div>
+							<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
-					<div class="article__thumbnail--container">
-						<div class="article__thumbnail--background-image"></div>
-						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
-						<div class="article__thumbnail--overlay">
-							<div class="reveal"></div>
-							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
-							<a href="#" class="primary-btn">Learn More</a>
+					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+						<div class="article__thumbnail--container">
+							<div class="article__thumbnail--overlay">
+								<div class="reveal"></div>
+								<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+								<a href="#" class="primary-btn">Learn More</a>
+							</div>
+							<div class="article__thumbnail--background-image"></div>
+							<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
-					<div class="article__thumbnail--container">
-						<div class="article__thumbnail--background-image"></div>
-						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
-						<div class="article__thumbnail--overlay">
-							<div class="reveal"></div>
-							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
-							<a href="#" class="primary-btn">Learn More</a>
+					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+						<div class="article__thumbnail--container">
+							<div class="article__thumbnail--overlay">
+								<div class="reveal"></div>
+								<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+								<a href="#" class="primary-btn">Learn More</a>
+							</div>
+							<div class="article__thumbnail--background-image"></div>
+							<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
-					<div class="article__thumbnail--container">
-						<div class="article__thumbnail--background-image"></div>
-						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
-						<div class="article__thumbnail--overlay">
-							<div class="reveal"></div>
-							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
-							<a href="#" class="primary-btn">Learn More</a>
+					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+						<div class="article__thumbnail--container">
+							<div class="article__thumbnail--overlay">
+								<div class="reveal"></div>
+								<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+								<a href="#" class="primary-btn">Learn More</a>
+							</div>
+							<div class="article__thumbnail--background-image"></div>
+							<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
-					<div class="article__thumbnail--container">
-						<div class="article__thumbnail--background-image"></div>
-						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
-						<div class="article__thumbnail--overlay">
-							<div class="reveal"></div>
-							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
-							<a href="#" class="primary-btn">Learn More</a>
+					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+						<div class="article__thumbnail--container">
+							<div class="article__thumbnail--overlay">
+								<div class="reveal"></div>
+								<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+								<a href="#" class="primary-btn">Learn More</a>
+							</div>
+							<div class="article__thumbnail--background-image"></div>
+							<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
-					<div class="article__thumbnail--container">
-						<div class="article__thumbnail--background-image"></div>
-						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
-						<div class="article__thumbnail--overlay">
-							<div class="reveal"></div>
-							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
-							<a href="#" class="primary-btn">Learn More</a>
+					<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+						<div class="article__thumbnail--container">
+							<div class="article__thumbnail--overlay">
+								<div class="reveal"></div>
+								<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+								<a href="#" class="primary-btn">Learn More</a>
+							</div>
+							<div class="article__thumbnail--background-image"></div>
+							<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
 						</div>
 					</div>
-				</div>
 			</div>
 		</section>
 	<?php endwhile; ?>

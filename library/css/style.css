@@ -2150,27 +2150,24 @@ POSTS & CONTENT STYLES
     border-radius: 0.5rem;
     overflow: hidden;
     max-width: 400px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative; }
   .article__thumbnail--background-image {
     background-image: url("../images/mt-sample-background.jpg");
     opacity: 0.7;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    top: 0px;
     height: 300px;
     -webkit-filter: grayscale(0.5);
             filter: grayscale(0.5);
     border-radius: 0.5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
     background-size: cover; }
   .article__thumbnail--title {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     color: #f6fdfe;
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: left;
     line-height: 1;
     padding: 1rem;
@@ -2178,9 +2175,9 @@ POSTS & CONTENT STYLES
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    top: -245px; }
+    top: -90%; }
   .article__thumbnail:hover .article__thumbnail--overlay {
-    top: -460px; }
+    bottom: 0%; }
     .article__thumbnail:hover .article__thumbnail--overlay .reveal {
       -webkit-box-shadow: 0px 2px 2px #ACC0C4;
               box-shadow: 0px 2px 2px #ACC0C4; }
@@ -2188,10 +2185,11 @@ POSTS & CONTENT STYLES
         content: "\f0d7";
         line-height: 1.7rem; }
   .article__thumbnail--overlay {
-    height: 500px;
     background-color: rgba(255, 255, 255, 0.97);
-    top: -185px;
+    z-index: 99;
     position: relative;
+    bottom: -93%;
+    height: 300px;
     -webkit-transition: all 0.4s;
     transition: all 0.4s; }
     .article__thumbnail--overlay .reveal {
