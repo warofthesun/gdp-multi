@@ -409,6 +409,10 @@ ul[id^="menu-"] {
 POSTS & CONTENT STYLES
 *********************/
 
+.wpcf7-form {
+	text-align: left;
+}
+
 .inner-page {
 	.overlay {
 		background: rgba($primary, .8);
@@ -667,6 +671,10 @@ div[class^="content_section--"] {
 
 	&.background-color {
 			background: rgba($lt-gray,0.8);
+
+			label {
+			  color: darken($gray, 10%);
+			}
 	}
 
 	&--full-width {
@@ -701,7 +709,7 @@ div[class^="content_section--"] {
 		flex-direction: column;
 
 		h1 {
-			text-transform: uppercase;
+			text-transform: normal;
 			color: $primary;
 			margin-bottom: 0;
 		}
@@ -710,6 +718,8 @@ div[class^="content_section--"] {
 			color: $gray;
 			font-weight: 400;
 			margin: 0;
+			font-size: 1.5rem;
+			text-transform: none;
 		}
 	}
 

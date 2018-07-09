@@ -38,7 +38,7 @@ body {}
 
 	&--line-two {
 		font-size: 3.5rem;
-	
+
 	}
 
 	&--logo-bar {
@@ -86,7 +86,13 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	&--inner {
+		display: flex;
+		height: 100px;
+		align-items: center;
+	}
+}
 
 	#logo {}
 

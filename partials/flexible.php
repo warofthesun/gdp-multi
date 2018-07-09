@@ -14,18 +14,25 @@
                 <a name="<?php echo str_replace(' ', '', get_sub_field('headline', 'option')); ?>"></a>
                   <article>
                     <div class="content_section content_section--full-width content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
+                      <?php if(get_sub_field('headline')) : ?>
                       <div class="content_section--content wrap row">
                         <h1><?php the_sub_field('headline'); ?></h1>
                         <h2><?php the_sub_field('subhead'); ?></h2>
-                        <?php
-                                $attachment_id = get_sub_field('image');
-                                $size = "full-width"; // (thumbnail, medium, large, full or custom size)
-                                $image = wp_get_attachment_image_src( $attachment_id, $size );
-                                // url = $image[0];
-                                // width = $image[1];
-                                // height = $image[2];
-                              ?>
                       </div>
+                    <?php endif; ?>
+                      <?php if( get_sub_field('body_copy') ): ?>
+                      <div class="col-xs-10 col-sm-8" style="margin:0 auto;">
+                        <?php the_sub_field('body_text'); ?>
+                      </div>
+                    <?php endif; ?>
+                        <?php
+                          $attachment_id = get_sub_field('image');
+                          $size = "full-width"; // (thumbnail, medium, large, full or custom size)
+                          $image = wp_get_attachment_image_src( $attachment_id, $size );
+                          // url = $image[0];
+                          // width = $image[1];
+                          // height = $image[2];
+                        ?>
                       <img src="<?php echo $image[0]; ?>">
                     </div>
                   </article>
@@ -82,30 +89,26 @@
                       while( have_rows('content') ): the_row(); ?>
                       <a name="<?php echo str_replace(' ', '', get_sub_field('headline', 'option')); ?>"></a>
                         <article>
+
                           <div class="content_section content_section--contact content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
+                            <?php if(get_sub_field('headline')) : ?>
                             <div class="content_section--content wrap row">
                               <h1><?php the_sub_field('headline'); ?></h1>
                               <h2><?php the_sub_field('subhead'); ?></h2>
                             </div>
+                          <?php endif; ?>
+                            <div class="content_section--<?php the_sub_field('image_alignment'); ?> wrap row" style="justify-content:space-evenly;">
 
-                            <div class="content_section--<?php the_sub_field('image_alignment'); ?> wrap row">
-                              <div class="col-xs-1 col-sm-1">
-                                &nbsp;
-                              </div>
                               <?php if( get_sub_field('body_copy') ): ?>
-                              <div class="col-xs-10 col-sm-5 first">
+                              <div class="col-xs-10 col-sm-5 first" style="order:<?php the_sub_field('align_form'); ?>">
                                 <?php the_sub_field('body_text'); ?>
                               </div>
                             <?php endif; ?>
-                            <div class="col-xs-1 col-sm-1">
-                              &nbsp;
-                            </div>
-                              <div class="col-xs-12 col-sm-4 last">
+
+                              <div class="col-xs-12 col-sm-5 last" style="order:2;">
                                 <?php the_sub_field('contact_form'); ?>
                               </div>
-                              <div class="col-xs-0 col-sm-1">
-                                &nbsp;
-                              </div>
+
                             </div>
 
                           </div>

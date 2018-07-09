@@ -1673,7 +1673,7 @@ input[type="password"] {
   letter-spacing: 0.3em; }
 
 label {
-  color: #cad7d9; }
+  color: #ACC0C4; }
 
 textarea {
   max-width: 100%;
@@ -2016,6 +2016,9 @@ ul[id^="menu-"] {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.wpcf7-form {
+  text-align: left; }
+
 .inner-page .overlay {
   background: rgba(59, 208, 237, 0.8); }
 
@@ -2234,6 +2237,8 @@ div[class^="content_section--"] {
 
 .content_section.background-color {
   background: rgba(232, 237, 238, 0.8); }
+  .content_section.background-color label {
+    color: #8ea9af; }
 
 .content_section--full-width img {
   width: 100%;
@@ -2265,13 +2270,15 @@ div[class^="content_section--"] {
       -ms-flex-direction: column;
           flex-direction: column; }
   .content_section--content h1 {
-    text-transform: uppercase;
+    text-transform: normal;
     color: #3BD0ED;
     margin-bottom: 0; }
   .content_section--content h2 {
     color: #ACC0C4;
     font-weight: 400;
-    margin: 0; }
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: none; }
 
 .content_section--testimonials .testimonial {
   padding: 2em;
@@ -2967,6 +2974,14 @@ LAYOUT & GRID STYLES
   /*********************
 HEADER STYLES
 *********************/
+  .header--inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   /*********************
 NAVIGATION STYLES
 *********************/
