@@ -1,4 +1,4 @@
-<!--page-->
+<!--advertise-->
 <?php get_header(); ?>
 
 			<div id="content">
@@ -12,5 +12,5 @@
 
 	<?php include 'partials/logo-bar.php'; ?>
 	</div>
-		
+		<?php wp_reset_postdata(); // reset the query ?>
 <?php get_footer(); ?>

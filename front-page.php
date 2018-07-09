@@ -4,7 +4,7 @@
 				<div class="hero--content wrap" >
 					<div id="inner-content">
 							<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-								<?php $custom_query = new WP_Query('pagename=advertise');
+								<?php $custom_query = new WP_Query('pagename=site-options');
 								while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 								<div class="hero--text">
 									<h1>
