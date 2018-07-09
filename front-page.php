@@ -1,236 +1,150 @@
 <!--front-page-->
 <?php get_header('front'); ?>
 
-			<div id="content">
-
-					<div id="inner-content" class="wrap row hero">
-
-							<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-								<?php $custom_query = new WP_Query('pagename=homepage');
+				<div class="hero--content wrap" >
+					<div id="inner-content">
+							<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+								<?php $custom_query = new WP_Query('pagename=advertise');
 								while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 								<div class="hero--text">
 									<h1>
-										<span class="hero--line-one"><?php the_field('line_one'); ?></span>
-										<span class="hero--line-two"><?php the_field('line_two'); ?></span>
+										<span class="hero--line-one">The latest IT strategy </span>
+										<span class="hero--line-two">and thought leadership</span>
 									</h1>
+									<p>IT Network Today keeps IT professionals and tech leaders up-to-date on the latest developments and movements in business technology, collated from the leading sources in the industry.</p>
 								</div>
-
+								<div class="hero--content_articles row">
+									<h2 class="col-sm-12">latest content</h2>
+									<div class="col-sm-4 article__thumbnail">
+										<div class="article__thumbnail--container">
+											<div class="article__thumbnail--background-image"></div>
+											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+											<div class="article__thumbnail--overlay">
+												<div class="reveal"></div>
+												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+												<a href="#" class="primary-btn">Learn More</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 article__thumbnail">
+										<div class="article__thumbnail--container">
+											<div class="article__thumbnail--background-image"></div>
+											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+											<div class="article__thumbnail--overlay">
+												<div class="reveal"></div>
+												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+												<a href="#" class="primary-btn">Learn More</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 article__thumbnail">
+										<div class="article__thumbnail--container">
+											<div class="article__thumbnail--background-image"></div>
+											<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+											<div class="article__thumbnail--overlay">
+												<div class="reveal"></div>
+												<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+												<a href="#" class="primary-btn">Learn More</a>
+											</div>
+										</div>
+									</div>
+								</div>
 							</main>
-
 					</div>
 				</div>
-
-			<ul class="hero--logo-bar">
-			<?php
-					//create a repeater loop
-					// check if the repeater field has rows of data
-					if( have_rows('add_partner_logos') ): while ( have_rows('add_partner_logos') ) : the_row(); ?>
+				<ul class="hero--logo-bar">
+					<?php
+						//create a repeater loop
+						// check if the repeater field has rows of data
+						if( have_rows('add_partner_logos') ): while ( have_rows('add_partner_logos') ) : the_row(); ?>
 
 						<?php
-							$attachment_id = get_sub_field('logo');
-							$size = "medium"; // (thumbnail, medium, large, full or custom size)
-							$image = wp_get_attachment_image_src( $attachment_id, $size );
-							// url = $image[0];
-							// width = $image[1];
-							// height = $image[2];
+						$attachment_id = get_sub_field('logo');
+						$size = "medium"; // (thumbnail, medium, large, full or custom size)
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						// url = $image[0];
+						// width = $image[1];
+						// height = $image[2];
 						?>
 						<?php if( get_sub_field('logo')): ?>
-							<li>
-								<img src="<?php echo $image[0]; ?>">
-							</li>
+						<li>
+							<img src="<?php echo $image[0]; ?>">
+						</li>
 						<?php endif; ?>
-
-
 					<?php endwhile; endif;  ?>
-					</ul>
-
+				</ul>
 		</div>
-		</div>
-			<?php
-				// check if the flexible content field has rows of data
-				if( have_rows('content_sections') ):
-
-				     // loop through the rows of data
-				    while ( have_rows('content_sections') ) : the_row();
-
-						// START FULL WIDTH
-				        if( get_row_layout() == 'text_and_full_width_image' ):
-
-									if( have_rows('content') ):
-
-											while( have_rows('content') ): the_row(); ?>
-											<a name="<?php echo str_replace(' ', '', get_sub_field('headline', 'option')); ?>"></a>
-												<article>
-													<div class="content_section content_section--full-width content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
-														<div class="content_section--content wrap row">
-															<h1><?php the_sub_field('headline'); ?></h1>
-															<h2><?php the_sub_field('subhead'); ?></h2>
-															<?php
-																			$attachment_id = get_sub_field('image');
-																			$size = "full-width"; // (thumbnail, medium, large, full or custom size)
-																			$image = wp_get_attachment_image_src( $attachment_id, $size );
-																			// url = $image[0];
-																			// width = $image[1];
-																			// height = $image[2];
-																		?>
-														</div>
-														<img src="<?php echo $image[0]; ?>">
-													</div>
-												</article>
-
-											<?php endwhile; endif;
-								// END FULL WIDTH
-
-								// START HALF WIDTH
-				        elseif( get_row_layout() == 'text_and_half_image' ):
-
-									if( have_rows('content') ):
-
-											while( have_rows('content') ): the_row(); ?>
-											<a name="<?php echo str_replace(' ', '', get_sub_field('headline', 'option')); ?>"></a>
-												<article>
-													<div class="content_section content_section--half content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
-														<div class="content_section--content wrap row">
-															<h1><?php the_sub_field('headline'); ?></h1>
-															<h2><?php the_sub_field('subhead'); ?></h2>
-														</div>
-
-														<div class="content_section--<?php the_sub_field('image_alignment'); ?> wrap row">
-															<?php if( get_sub_field('body_copy') ): ?>
-															<div class="col-xs-12 col-sm-7">
-																<?php the_sub_field('body_text'); ?>
-															</div>
-														<?php endif; ?>
-															<div class="col-xs-12 col-sm-5">
-																<?php
-																				$attachment_id = get_sub_field('image');
-																				$size = "full-width"; // (thumbnail, medium, large, full or custom size)
-																				$image = wp_get_attachment_image_src( $attachment_id, $size );
-																				// url = $image[0];
-																				// width = $image[1];
-																				// height = $image[2];
-																			?>
-
-																			<img src="<?php echo $image[0]; ?>">
-															</div>
-
-														</div>
-
-													</div>
-												</article>
-
-											<?php endwhile; endif;
-											// END HALF WIDTH
-
-											// START CONTACT
-											elseif( get_row_layout() == 'contact_section' ):
-
-												if( have_rows('content') ):
-
-														while( have_rows('content') ): the_row(); ?>
-														<a name="<?php echo str_replace(' ', '', get_sub_field('headline', 'option')); ?>"></a>
-															<article>
-																<div class="content_section content_section--contact content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
-																	<div class="content_section--content wrap row">
-																		<h1><?php the_sub_field('headline'); ?></h1>
-																		<h2><?php the_sub_field('subhead'); ?></h2>
-																	</div>
-
-																	<div class="content_section--<?php the_sub_field('image_alignment'); ?> wrap row">
-																		<div class="col-xs-1 col-sm-1">
-																			&nbsp;
-																		</div>
-																		<?php if( get_sub_field('body_copy') ): ?>
-																		<div class="col-xs-10 col-sm-5 first">
-																			<?php the_sub_field('body_text'); ?>
-																		</div>
-																	<?php endif; ?>
-																	<div class="col-xs-1 col-sm-1">
-																		&nbsp;
-																	</div>
-																		<div class="col-xs-12 col-sm-4 last">
-																			<?php the_sub_field('contact_form'); ?>
-																		</div>
-																		<div class="col-xs-0 col-sm-1">
-																			&nbsp;
-																		</div>
-																	</div>
-
-																</div>
-															</article>
-
-														<?php endwhile; endif;
-														// END CONTACT
-
-														// START TESTIMONIAL
-														elseif( get_row_layout() == 'customer_testimonials' ):
-
-															if( have_rows('content') ):
-
-																	while( have_rows('content') ): the_row(); ?>
-																	<a name="<?php echo str_replace(' ', '', get_sub_field('headline', 'option')); ?>"></a>
-																		<article>
-																			<div class="content_section content_section--contact content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
-																				<div class="content_section--content wrap row">
-																					<h1><?php the_sub_field('headline'); ?></h1>
-																					<h2><?php the_sub_field('subhead'); ?></h2>
-																				</div>
-
-																				<div class="content_section--testimonials wrap row">
-																					<!-- BEGIN SLIDER -->
-																					<?php	// check if the nested repeater field has rows of data
-																						if( have_rows('testimonials') ): ?>
-																					<div id="carousel">
-
-																					    <div id="testimonial--buttons"><i id="prev" class="fas fa-adjust"></i><i id="next" class="fas fa-adjust fa-flip-horizontal" data-fa-transform="flip-v flip-h"></i> </div>
-
-																					    <div id="slides">
-																					        <ul>
-																										<?php // loop through the rows of data
-																					          while ( have_rows('testimonials') ) : the_row(); ?>
-																					            <li class="slide">
-																					                <div class="quoteContainer">
-																													<div class="testimonial">
-																														<i class="fas fa-quote-left"></i>
-																														<span><?php the_sub_field('testimonial'); ?></span>
-																														<i class="fas fa-quote-right"></i>
-																													</div>
-
-																					                    </p>
-																					                </div>
-																					                <div class="authorContainer">
-																														<div class="testimonial--client-name">
-																																<?php the_sub_field('client_name'); ?>
-																														</div>
-																														<div class="testimonial--client-title">
-																																<?php the_sub_field('client_title'); ?>
-																														</div>
-																					                </div>
-																					            </li>
-																					            <?php	endwhile; endif; ?>
-
-
-																					        </ul>
-																					    </div>
-																							<!-- END SLIDER -->
-
-																				</div>
-																			</article>
-
-																	<?php endwhile; endif;
-																	// END TESTIMONIAL
-				         endif;
-
-				    endwhile;
-
-				else :
-
-				    // no layouts found
-
-				endif;
-
-			?>
-
+		<section class="articles wrap" style="max-Width:1035px;margin-bottom:3rem;">
+				<h2>All articles</h2>
+				<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+					<div class="article__thumbnail--container">
+						<div class="article__thumbnail--background-image"></div>
+						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+						<div class="article__thumbnail--overlay">
+							<div class="reveal"></div>
+							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+							<a href="#" class="primary-btn">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+					<div class="article__thumbnail--container">
+						<div class="article__thumbnail--background-image"></div>
+						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+						<div class="article__thumbnail--overlay">
+							<div class="reveal"></div>
+							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+							<a href="#" class="primary-btn">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+					<div class="article__thumbnail--container">
+						<div class="article__thumbnail--background-image"></div>
+						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+						<div class="article__thumbnail--overlay">
+							<div class="reveal"></div>
+							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+							<a href="#" class="primary-btn">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+					<div class="article__thumbnail--container">
+						<div class="article__thumbnail--background-image"></div>
+						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+						<div class="article__thumbnail--overlay">
+							<div class="reveal"></div>
+							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+							<a href="#" class="primary-btn">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+					<div class="article__thumbnail--container">
+						<div class="article__thumbnail--background-image"></div>
+						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+						<div class="article__thumbnail--overlay">
+							<div class="reveal"></div>
+							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+							<a href="#" class="primary-btn">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 article__thumbnail">
+					<div class="article__thumbnail--container">
+						<div class="article__thumbnail--background-image"></div>
+						<span class="article__thumbnail--title">How Automating Accounts Payable Yielded Money-Saving Results</span>
+						<div class="article__thumbnail--overlay">
+							<div class="reveal"></div>
+							<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum, dolor in commodo hendrerit, ante lectus ullamcorper purus, id molestie metus ipsum eget lorem. Aenean lobortis ligula nisi, sit amet eleifend mi tempor vitae...</div>
+							<a href="#" class="primary-btn">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); // reset the query ?>
 

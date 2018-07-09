@@ -25,9 +25,9 @@ $alert-blue:        #d5edf8 !default;
 $black:             #000 !default;
 $white:             #fff !default;
 
-
-$gray:              #5F7C82 !default;
-$lt-gray:           lighten($gray, 52%) !default;
+$gray:              #ACC0C4 !default;
+$dark-gray:         #5F7C82 !default;
+$lt-gray:           lighten($gray, 20%) !default;
 $meta-gray:         #9fa6b4 !default;
 
 $text-color:        #5c6b80 !default;
@@ -35,7 +35,7 @@ $text-color:        #5c6b80 !default;
 $accent:            #A09420 !default;
 
 $primary:           #3BD0ED !default;
-$lt-primary:        lighten($primary, 20%) !default;
+$lt-primary:        lighten($primary, 40%) !default;
 $md-primary:        darken($primary, 15%) !default;
 $dark-primary:      darken($primary, 40%) !default;
 
@@ -54,3 +54,8 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+
+$hero-height:      100vh;
+$hero-height-inner:      150px;
+
+$radius:           0.5rem;

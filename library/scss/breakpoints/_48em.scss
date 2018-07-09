@@ -24,7 +24,7 @@ NAVIGATION STYLES
 *********************/
 
 #inner-header {
-	height: 85px;
+	height: 60px;
 	align-items: center;
 	justify-content: center;
 
@@ -36,8 +36,7 @@ NAVIGATION STYLES
 
 	.logo {
 		order: 2;
-		margin-top: 0em;
-		margin-bottom: -1em;
+		margin:auto;
 	}
 
 	.menu-left {
@@ -113,6 +112,14 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+.overlay {
+	@include hero-height;
+
+	&--inner {
+
+	}
+}
 
 .content_section {
 	&--content_left {

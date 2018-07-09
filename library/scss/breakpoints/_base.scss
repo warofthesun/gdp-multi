@@ -61,6 +61,7 @@ img {
 	}
 }
 
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -153,7 +154,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
-	font-family: $sans-serif;
+	font-family: $display;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -174,6 +175,8 @@ h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
+	font-weight: bold;
+	text-transform: uppercase;
 
 }
 
@@ -198,8 +201,28 @@ HEADER STYLES
 *********************/
 
 .header {
-		background-image: linear-gradient($gradient-1 0%, $gradient-2 100%);
-}
+	background-image: linear-gradient($gradient-1 0%, $gradient-2 100%);
+
+	&--inner {
+		background-image: linear-gradient(white 0%, white 100%);
+
+		.nav {
+			li {
+				a {
+					color: $primary;
+
+					&:hover {
+						color: $md-primary;
+						text-shadow: 0px 0px 1px $dark-gray;
+					}
+				}
+			}
+		}
+
+		#mobile-nav {
+			color: $primary;
+		}
+	}
 
 	.logo {
 		order: 1;
@@ -215,6 +238,7 @@ HEADER STYLES
 			color: $white;
 		}
 	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -314,10 +338,10 @@ ul[id^="menu-"] {
 			display: block;
 			color: $white;
 			text-decoration: none;
-			font-size: 1.2em;
+			font-size: 1em;
 			padding: 0.75em;
 			text-transform: uppercase;
-			font-weight: 400;
+			font-weight: 700;
 			letter-spacing: .02em;
 			transition: all .5sec;
 			//text-shadow: 1px 1px .5px #269eb9;
@@ -392,34 +416,102 @@ POSTS & CONTENT STYLES
 }
 
 .overlay {
-	background: rgba($primary, .5);
+	display: flex;
+	flex-direction: column;
+
+	&--inner {
+		@include hero-height-inner;
+	}
 }
 
 .hero {
 	text-align: center;
-	min-height: 300px;
 	align-items: center;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	&--inner {
+		@include hero-height-inner;
+
+		.hero--background-image {
+			@include hero-height-inner;
+		}
+	}
+
+
+	&--background-image {
+		@include hero-height;
+		background-size:cover;
+		background-position:50%;
+		background-attachment: fixed;
+		position: absolute;
+		width: 100%;
+		filter: grayscale(50%);
+
+		&--inner {
+			@include hero-height-inner;
+			background-attachment: local;
+			filter: grayscale(70%);
+		}
+	}
+
+	&--content {
+		margin:auto;
+		width: 100%;
+		max-width: 1280px;
+
+		&_articles {
+			width: 100%;
+			background-color: rgba($gray, 0.4);
+			justify-content: space-around;
+			border-radius: $radius;
+			margin-left: 0;
+			margin-right: 0;
+
+
+			h2 {
+				background-color: rgba($gray, 0.3);
+				margin-top: 0;
+				margin-bottom: 0;
+				color: $dark-gray;
+				text-transform: uppercase;
+				font-weight: 700;
+				border-top-left-radius: $radius;
+				border-top-right-radius: $radius;
+			}
+		}
+	}
 
 	&--text {
-		margin-top: -3em;
-		text-shadow: 1px 1px 1px $dark-primary;
+
+
+		p {
+			max-width: 600px;
+			margin:0 auto;
+			margin-bottom: 2em;
+			font-size: 1.3em;
+			color: $dark-primary;
+		}
 	}
 
 	&--line-one {
 		font-family: $display;
 		display: block;
-		font-size: 60px;
-		color: $white;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 1px $dark-primary;
+		color: $md-primary;
+		font-weight: 700;
 	}
 
 	&--line-two {
 		font-family: $sans-serif;
 		display: block;
-		font-size: 52px;
-		font-weight: 500;
+		color: $md-primary;
+		font-weight: 700;
 		text-transform: uppercase;
+		text-shadow: 1px 1px 1px $dark-primary;
 		margin-top: .3em;
-		color: $white;
 	}
 
 	&--logo-bar {
@@ -429,6 +521,8 @@ POSTS & CONTENT STYLES
 		align-items: center;
 		min-height: 80px;
 		flex-wrap: wrap;
+		margin:0;
+		margin-top: auto;
 
 
 		li {
@@ -441,6 +535,105 @@ POSTS & CONTENT STYLES
 				width: 100%;
 				height: auto;
 			}
+		}
+	}
+}
+
+.articles {
+	h2 {
+		border-bottom: 1px solid $lt-gray;
+		text-align: left;
+		color: $primary;
+		padding-bottom: .5rem;
+		font-size: 1.5rem;
+		margin-top: 1rem;
+	}
+}
+
+.article__thumbnail {
+	padding:1em;
+	display: inline-block;
+
+	&--container {
+		background-color: $primary;
+		height: 300px;
+		border-radius: $radius;
+		overflow: hidden;
+		max-width: 400px;
+		margin:0 auto;
+	}
+	&--background-image {
+		background-image: url('../images/mt-sample-background.jpg');
+		opacity: 0.7;
+		position: relative;
+		height: 300px;
+		filter: grayscale(.5);
+		border-radius: $radius;
+		display: flex;
+		align-items: flex-end;
+		background-size: cover;
+	}
+	&--title {
+		font-family: $display;
+		font-weight: 700;
+		color: $lt-primary;
+		font-size: 2rem;
+		text-align: left;
+		line-height: 1;
+		padding: 1rem;
+		display: flex;
+		position: relative;
+		top: -245px;
+	}
+
+	&:hover {
+		.article__thumbnail--overlay {
+			top: -460px;
+
+			.reveal {
+				box-shadow: 0px 2px 2px $gray;
+
+				&:before {
+					content: "\f0d7";
+					line-height: 1.7rem;
+				}
+			}
+		}
+	}
+
+	&--overlay {
+		height: 500px;
+		background-color: rgba(255,255,255,0.97);
+		top: -185px;
+		position: relative;
+		@include transition(all 0.4s);
+
+
+		.reveal {
+			background-color: $primary;
+			height: 1.6rem;
+			box-shadow: 0px -2px 2px $dark-primary;
+			@include transition(all 0.4s);
+
+			&:before {
+				color: $md-primary;
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: "\f0de";
+				font-size: 2rem;
+				line-height: 2.4rem;
+			}
+		}
+
+		.content {
+			text-align: left;
+			color: $dark-primary;
+			padding: 2rem;
 		}
 	}
 }
@@ -1169,7 +1362,7 @@ COMMENT STYLES
 
 	/* comment reply link */
 	.comment-reply-link {
-		@extend .blue-btn;
+		@extend .primary-btn;
 		font-size: 0.9em;
 		float: right;
 
@@ -1225,7 +1418,7 @@ COMMENT FORM STYLES
 
 	/* comment submit button */
 	#submit {
-		@extend .blue-btn;
+		@extend .primary-btn;
 		float: right;
 		font-size: 1em;
 	}
@@ -1299,8 +1492,8 @@ FOOTER STYLES
 	clear: both;
 	background-color: $md-primary;
 	color: $lt-gray;
-	min-height: 200px;
 	align-items: center;
+	width: 100%;
 
 	.physical_address {
 		order: 2;

@@ -31,7 +31,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   text-decoration: none;
   color: $white;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: .9rem;
   line-height: 34px;
   font-weight: normal;
   padding: 0 24px;
@@ -60,7 +60,7 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn, input[type="submit"] {
+.primary-btn, input[type="submit"] {
   @extend %btn; // here we load the btn defaults
   background-color: $primary;
 

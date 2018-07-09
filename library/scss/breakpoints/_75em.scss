@@ -11,4 +11,9 @@ be seen on the Desktop.
 
 .wrap {
   width: 1040px;
+
+  &--homepage {
+    width: 1280px;
+    margin:0 auto;
+  }
 }

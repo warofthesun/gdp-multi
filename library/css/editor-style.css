@@ -343,7 +343,7 @@ BOX SIZING
   /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
   width: 731px;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -599,7 +599,7 @@ probably best not to use it. I mean, were you going to anyway? */
     margin: 0 0 1.5em; }
   body#tinymce.wp-editor table {
     width: 100%;
-    border: 1px solid #5F7C82;
+    border: 1px solid #ACC0C4;
     margin-bottom: 1.5em; }
     body#tinymce.wp-editor table caption {
       margin: 0 0 7px;
@@ -608,18 +608,18 @@ probably best not to use it. I mean, were you going to anyway? */
       text-transform: uppercase;
       letter-spacing: 1px; }
   body#tinymce.wp-editor tr {
-    border-bottom: 1px solid #5F7C82; }
+    border-bottom: 1px solid #ACC0C4; }
     body#tinymce.wp-editor tr:nth-child(even) {
-      background-color: #f4f6f7; }
+      background-color: #e8edee; }
   body#tinymce.wp-editor td {
     padding: 7px;
-    border-right: 1px solid #5F7C82; }
+    border-right: 1px solid #ACC0C4; }
     body#tinymce.wp-editor td:last-child {
       border-right: 0; }
   body#tinymce.wp-editor th {
-    background-color: #f4f6f7;
-    border-bottom: 1px solid #5F7C82;
-    border-right: 1px solid #5F7C82; }
+    background-color: #e8edee;
+    border-bottom: 1px solid #ACC0C4;
+    border-right: 1px solid #ACC0C4; }
     body#tinymce.wp-editor th:last-child {
       border-right: 0; }
   body#tinymce.wp-editor blockquote {
@@ -646,7 +646,7 @@ probably best not to use it. I mean, were you going to anyway? */
     height: auto; }
   body#tinymce.wp-editor pre {
     background: #000;
-    color: #f4f6f7;
+    color: #e8edee;
     font-size: 0.9em;
     padding: 1.5em;
     margin: 0 0 1.5em;

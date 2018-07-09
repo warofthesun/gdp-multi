@@ -1361,14 +1361,14 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit, input[type="submit"] {
+.primary-btn, .comment-reply-link, #submit, input[type="submit"] {
   display: inline-block;
   position: relative;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: .9rem;
   line-height: 34px;
   font-weight: normal;
   padding: 0 24px;
@@ -1377,11 +1377,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, input[type="submit"]:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:focus {
+  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, input[type="submit"]:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .blue-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active {
+  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active {
     top: 1px; }
 
 /*
@@ -1389,11 +1389,11 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn, .comment-reply-link, #submit, input[type="submit"] {
+.primary-btn, .comment-reply-link, #submit, input[type="submit"] {
   background-color: #3BD0ED; }
-  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:hover, input[type="submit"]:focus {
     background-color: #12abc9; }
-  .blue-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active {
+  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active {
     background-color: #24caeb; }
 
 /******************************************************************
@@ -1439,16 +1439,16 @@ textarea,
   padding: 0 12px;
   margin-bottom: 14px;
   font-size: 1em;
-  color: #5F7C82;
+  color: #ACC0C4;
   border-radius: 3px;
   vertical-align: middle;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 0;
   width: 100%;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 1px solid #fff;
-  background-color: #e8edee;
+  background-color: #dce4e6;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
   input[type="text"]:focus, input[type="text"]:active,
@@ -1673,7 +1673,7 @@ input[type="password"] {
   letter-spacing: 0.3em; }
 
 label {
-  color: #78969c; }
+  color: #cad7d9; }
 
 textarea {
   max-width: 100%;
@@ -1712,7 +1712,7 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -1826,7 +1826,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -1842,7 +1842,9 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1.75em;
   line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0.375em;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 h3, .h3 {
   font-size: 1.125em; }
@@ -1863,18 +1865,27 @@ HEADER STYLES
 .header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(53, 160, 182, 0.55)), to(rgba(2, 84, 100, 0.51)));
   background-image: linear-gradient(rgba(53, 160, 182, 0.55) 0%, rgba(2, 84, 100, 0.51) 100%); }
-
-.logo {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  margin-bottom: 1em;
-  margin-top: 2em; }
-  .logo img {
-    width: 100%;
-    height: auto; }
-  .logo a {
-    color: #fff; }
+  .header--inner {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+    background-image: linear-gradient(white 0%, white 100%); }
+    .header--inner .nav li a {
+      color: #3BD0ED; }
+      .header--inner .nav li a:hover {
+        color: #12abc9;
+        text-shadow: 0px 0px 1px #5F7C82; }
+    .header--inner #mobile-nav {
+      color: #3BD0ED; }
+  .header .logo {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 1em;
+    margin-top: 2em; }
+    .header .logo img {
+      width: 100%;
+      height: auto; }
+    .header .logo a {
+      color: #fff; }
 
 /*********************
 NAVIGATION STYLES
@@ -1925,7 +1936,7 @@ ul[id^="menu-"] {
           order: 4;
   color: #fff;
   text-transform: uppercase;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   /*&:after {
 		font-family: 'Font Awesome 5 Free';
@@ -1963,7 +1974,7 @@ ul[id^="menu-"] {
   height: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
@@ -1984,10 +1995,10 @@ ul[id^="menu-"] {
       display: block;
       color: #fff;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1em;
       padding: 0.75em;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 700;
       letter-spacing: .02em;
       -webkit-transition: all .5sec;
       transition: all .5sec;
@@ -2009,30 +2020,94 @@ POSTS & CONTENT STYLES
   background: rgba(59, 208, 237, 0.8); }
 
 .overlay {
-  background: rgba(59, 208, 237, 0.5); }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .overlay--inner {
+    height: 120px;
+    min-height: 120px !important; }
 
 .hero {
   text-align: center;
-  min-height: 300px;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
-  .hero--text {
-    margin-top: -3em;
-    text-shadow: 1px 1px 1px #084854; }
+          align-items: center;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .hero--inner {
+    height: 120px;
+    min-height: 120px !important; }
+    .hero--inner .hero--background-image {
+      height: 120px;
+      min-height: 120px !important; }
+  .hero--background-image {
+    height: 100vh;
+    min-height: 905px;
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+    position: absolute;
+    width: 100%;
+    -webkit-filter: grayscale(50%);
+            filter: grayscale(50%); }
+    .hero--background-image--inner {
+      height: 120px;
+      min-height: 120px !important;
+      background-attachment: local;
+      -webkit-filter: grayscale(70%);
+              filter: grayscale(70%); }
+  .hero--content {
+    margin: auto;
+    width: 100%;
+    max-width: 1280px; }
+    .hero--content_articles {
+      width: 100%;
+      background-color: rgba(172, 192, 196, 0.4);
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      border-radius: 0.5rem;
+      margin-left: 0;
+      margin-right: 0; }
+      .hero--content_articles h2 {
+        background-color: rgba(172, 192, 196, 0.3);
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #5F7C82;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem; }
+  .hero--text p {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    font-size: 1.3em;
+    color: #084854; }
   .hero--line-one {
-    font-family: "Gruppo", cursive;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: block;
-    font-size: 60px;
-    color: #fff; }
-  .hero--line-two {
-    font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    display: block;
-    font-size: 52px;
-    font-weight: 500;
     text-transform: uppercase;
-    margin-top: .3em;
-    color: #fff; }
+    text-shadow: 1px 1px 1px #084854;
+    color: #12abc9;
+    font-weight: 700; }
+  .hero--line-two {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    color: #12abc9;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #084854;
+    margin-top: .3em; }
   .hero--logo-bar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2046,7 +2121,9 @@ POSTS & CONTENT STYLES
             align-items: center;
     min-height: 80px;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+    margin: 0;
+    margin-top: auto; }
     .hero--logo-bar li {
       -ms-flex-preferred-size: 50px;
           flex-basis: 50px;
@@ -2055,6 +2132,91 @@ POSTS & CONTENT STYLES
       .hero--logo-bar li img {
         width: 100%;
         height: auto; }
+
+.articles h2 {
+  border-bottom: 1px solid #e8edee;
+  text-align: left;
+  color: #3BD0ED;
+  padding-bottom: .5rem;
+  font-size: 1.5rem;
+  margin-top: 1rem; }
+
+.article__thumbnail {
+  padding: 1em;
+  display: inline-block; }
+  .article__thumbnail--container {
+    background-color: #3BD0ED;
+    height: 300px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto; }
+  .article__thumbnail--background-image {
+    background-image: url("../images/mt-sample-background.jpg");
+    opacity: 0.7;
+    position: relative;
+    height: 300px;
+    -webkit-filter: grayscale(0.5);
+            filter: grayscale(0.5);
+    border-radius: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    background-size: cover; }
+  .article__thumbnail--title {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: #f6fdfe;
+    font-size: 2rem;
+    text-align: left;
+    line-height: 1;
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    top: -245px; }
+  .article__thumbnail:hover .article__thumbnail--overlay {
+    top: -460px; }
+    .article__thumbnail:hover .article__thumbnail--overlay .reveal {
+      -webkit-box-shadow: 0px 2px 2px #ACC0C4;
+              box-shadow: 0px 2px 2px #ACC0C4; }
+      .article__thumbnail:hover .article__thumbnail--overlay .reveal:before {
+        content: "\f0d7";
+        line-height: 1.7rem; }
+  .article__thumbnail--overlay {
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.97);
+    top: -185px;
+    position: relative;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s; }
+    .article__thumbnail--overlay .reveal {
+      background-color: #3BD0ED;
+      height: 1.6rem;
+      -webkit-box-shadow: 0px -2px 2px #084854;
+              box-shadow: 0px -2px 2px #084854;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s; }
+      .article__thumbnail--overlay .reveal:before {
+        color: #12abc9;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f0de";
+        font-size: 2rem;
+        line-height: 2.4rem; }
+    .article__thumbnail--overlay .content {
+      text-align: left;
+      color: #084854;
+      padding: 2rem; }
 
 .first {
   padding-left: 0; }
@@ -2073,7 +2235,7 @@ div[class^="content_section--"] {
   text-align: center; }
 
 .content_section.background-color {
-  background: rgba(244, 246, 247, 0.8); }
+  background: rgba(232, 237, 238, 0.8); }
 
 .content_section--full-width img {
   width: 100%;
@@ -2109,7 +2271,7 @@ div[class^="content_section--"] {
     color: #3BD0ED;
     margin-bottom: 0; }
   .content_section--content h2 {
-    color: #5F7C82;
+    color: #ACC0C4;
     font-weight: 400;
     margin: 0; }
 
@@ -2122,19 +2284,19 @@ div[class^="content_section--"] {
     z-index: 99; }
   .content_section--testimonials .testimonial .fa-quote-left, .content_section--testimonials .testimonial .fa-quote-right {
     font-size: 3em;
-    color: #ebeff0;
+    color: #dfe6e8;
     position: absolute;
     z-index: 90;
     margin-top: -.2em; }
   .content_section--testimonials .testimonial .fa-quote-right {
     float: right; }
   .content_section--testimonials .testimonial--client-name {
-    font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     color: #084854;
     font-size: 1.5em; }
   .content_section--testimonials .testimonial--client-title {
-    font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 200;
     color: #084854;
     font-size: 1.2em; }
@@ -2149,7 +2311,7 @@ div[class^="content_section--"] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #f4f6f7; }
+  background-color: #e8edee; }
 
 #slides {
   overflow: hidden;
@@ -2215,11 +2377,11 @@ i#prev:hover, i#next:hover {
   margin-bottom: 1.5em;
   border: 0px solid #ccc; }
   .hentry header {
-    border-bottom: 1px solid #f4f6f7;
+    border-bottom: 1px solid #e8edee;
     padding: 1.5em; }
   .hentry footer {
     padding: 1.5em;
-    border-top: 1px solid #f4f6f7; }
+    border-top: 1px solid #e8edee; }
     .hentry footer p {
       margin: 0; }
 
@@ -2264,7 +2426,7 @@ i#prev:hover, i#next:hover {
     margin: 0 0 1.5em; }
   .entry-content table {
     width: 100%;
-    border: 1px solid #5F7C82;
+    border: 1px solid #ACC0C4;
     margin-bottom: 1.5em; }
     .entry-content table caption {
       margin: 0 0 7px;
@@ -2273,18 +2435,18 @@ i#prev:hover, i#next:hover {
       text-transform: uppercase;
       letter-spacing: 1px; }
   .entry-content tr {
-    border-bottom: 1px solid #5F7C82; }
+    border-bottom: 1px solid #ACC0C4; }
     .entry-content tr:nth-child(even) {
-      background-color: #f4f6f7; }
+      background-color: #e8edee; }
   .entry-content td {
     padding: 7px;
-    border-right: 1px solid #5F7C82; }
+    border-right: 1px solid #ACC0C4; }
     .entry-content td:last-child {
       border-right: 0; }
   .entry-content th {
-    background-color: #f4f6f7;
-    border-bottom: 1px solid #5F7C82;
-    border-right: 1px solid #5F7C82; }
+    background-color: #e8edee;
+    border-bottom: 1px solid #ACC0C4;
+    border-right: 1px solid #ACC0C4; }
     .entry-content th:last-child {
       border-right: 0; }
   .entry-content blockquote {
@@ -2311,7 +2473,7 @@ i#prev:hover, i#next:hover {
     height: auto; }
   .entry-content pre {
     background: #000;
-    color: #f4f6f7;
+    color: #e8edee;
     font-size: 0.9em;
     padding: 1.5em;
     margin: 0 0 1.5em;
@@ -2394,7 +2556,7 @@ PAGE NAVI STYLES
     float: left;
     display: inline;
     overflow: hidden;
-    border-right: 1px solid #5F7C82; }
+    border-right: 1px solid #ACC0C4; }
   .pagination a, .pagination span {
     margin: 0;
     text-decoration: none;
@@ -2432,7 +2594,7 @@ COMMENT STYLES
 #comments-title {
   padding: 0.75em;
   margin: 0;
-  border-top: 1px solid #f4f6f7;
+  border-top: 1px solid #e8edee;
   /* number of comments span */ }
 
 .commentlist {
@@ -2444,7 +2606,7 @@ COMMENT STYLES
   clear: both;
   overflow: hidden;
   padding: 1.5em;
-  border-bottom: 1px solid #f4f6f7;
+  border-bottom: 1px solid #e8edee;
   /* vcard */
   /* end .commentlist .vcard */
   /* end children */
@@ -2488,7 +2650,7 @@ COMMENT STYLES
   .comment.odd {
     background-color: #fff; }
   .comment.even {
-    background: #f4f6f7; }
+    background: #e8edee; }
 
 /* comment meta */
 /* comment content */
@@ -2516,7 +2678,7 @@ COMMENT FORM STYLES
 ******************************************************************/
 .comment-respond {
   padding: 1.5em;
-  border-top: 1px solid #f4f6f7; }
+  border-top: 1px solid #e8edee; }
 
 #reply-title {
   margin: 0; }
@@ -2533,7 +2695,7 @@ COMMENT FORM STYLES
 
 .form-allowed-tags {
   padding: 1.5em;
-  background-color: #f4f6f7;
+  background-color: #e8edee;
   font-size: 0.9em; }
 
 /* comment submit button */
@@ -2575,11 +2737,11 @@ FOOTER STYLES
 .footer {
   clear: both;
   background-color: #12abc9;
-  color: #f4f6f7;
-  min-height: 200px;
+  color: #e8edee;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  width: 100%; }
   .footer .physical_address {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -2642,7 +2804,7 @@ them in here, they won't work.
 NAVIGATION STYLES
 *********************/
   #inner-header {
-    height: 85px;
+    height: 60px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2664,8 +2826,7 @@ NAVIGATION STYLES
       -webkit-box-ordinal-group: 3;
           -ms-flex-order: 2;
               order: 2;
-      margin-top: 0em;
-      margin-bottom: -1em; }
+      margin: auto; }
     #inner-header .menu-left {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
@@ -2706,6 +2867,9 @@ NAVIGATION STYLES
   /*********************
 POSTS & CONTENT STYLES
 *********************/
+  .overlay {
+    height: 100vh;
+    min-height: 905px; }
   .content_section--content_left .content_section--content {
     text-align: left; }
   .content_section--content_center .content_section--content {
@@ -2766,13 +2930,12 @@ GENERAL STYLES
   .hero {
     min-height: 400px; }
     .hero--text {
-      text-shadow: 0px 0px 0px #084854; }
+      text-shadow: 0px 0px 0px #084854;
+      margin-top: auto; }
     .hero--line-one {
-      font-size: 80px;
-      color: #084854; }
+      font-size: 3.5rem; }
     .hero--line-two {
-      font-size: 72px;
-      color: #084854; }
+      font-size: 3.5rem; }
     .hero--logo-bar {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; }
@@ -2825,6 +2988,8 @@ NAVIGATION STYLES
       .nav li a {
         border-bottom: 0;
         text-shadow: 0px 0px 0px #fff;
+        -webkit-transition: all .2s;
+        transition: all .2s;
         /*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
@@ -2832,10 +2997,9 @@ NAVIGATION STYLES
         .nav li a:hover, .nav li a:focus {
           text-decoration: none;
           color: #fff;
-          text-shadow: 1px 1px #084854;
-          font-size: 1.2em;
-          font-weight: bold;
-          letter-spacing: -.1px; }
+          text-shadow: 1px 0px 4px rgba(8, 72, 84, 0.7); }
+        .nav li a:active {
+          text-shadow: 0px 0px 2px #084854; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
@@ -2961,7 +3125,10 @@ be seen on the Desktop.
 
 ******************************************************************/
   .wrap {
-    width: 1040px; } }
+    width: 1040px; }
+    .wrap--homepage {
+      width: 1280px;
+      margin: 0 auto; } }
 
 /*********************
 LARGE VIEWING SIZE

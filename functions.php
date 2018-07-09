@@ -275,7 +275,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function starter_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,900|Gruppo|Oswald:300,400,500,600');
+  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Montserrat:400,500,700|Roboto:300,400,700');
 }
 
 add_action('wp_enqueue_scripts', 'starter_fonts');

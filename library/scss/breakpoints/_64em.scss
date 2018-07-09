@@ -28,16 +28,17 @@ body {}
 
 	&--text {
 		text-shadow: 0px 0px 0px $dark-primary;
+		margin-top: auto;
 	}
 
 	&--line-one {
-		font-size: 80px;
-		color: $dark-primary;
+		font-size: 3.5rem;
+
 	}
 
 	&--line-two {
-		font-size: 72px;
-		color: $dark-primary;
+		font-size: 3.5rem;
+	
 	}
 
 	&--logo-bar {
@@ -107,6 +108,7 @@ NAVIGATION STYLES
 		a {
 			border-bottom: 0;
 			text-shadow: 0px 0px 0px $white;
+			transition: all .2s;
 
 			/*
 			you can use hover styles here even though this size
@@ -115,10 +117,11 @@ NAVIGATION STYLES
 			&:hover, &:focus {
 				text-decoration: none;
 				color: $white;
-				text-shadow: 1px 1px $dark-primary;
-				font-size: 1.2em;
-				font-weight: bold;
-				letter-spacing: -.1px;
+				text-shadow: 1px 0px 4px rgba($dark-primary, 0.7);
+			}
+
+			&:active {
+				text-shadow: 0px 0px 2px $dark-primary;
 			}
 		}
 

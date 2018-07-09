@@ -160,7 +160,7 @@ them in here, they won't work.
 NAVIGATION STYLES
 *********************/
 #inner-header {
-  height: 85px;
+  height: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -182,8 +182,7 @@ NAVIGATION STYLES
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
-    margin-top: 0em;
-    margin-bottom: -1em; }
+    margin: auto; }
   #inner-header .menu-left {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -228,6 +227,10 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.overlay {
+  height: 100vh;
+  min-height: 905px; }
+
 .content_section--content_left .content_section--content {
   text-align: left; }
 
@@ -285,13 +288,12 @@ GENERAL STYLES
 .hero {
   min-height: 400px; }
   .hero--text {
-    text-shadow: 0px 0px 0px #084854; }
+    text-shadow: 0px 0px 0px #084854;
+    margin-top: auto; }
   .hero--line-one {
-    font-size: 80px;
-    color: #084854; }
+    font-size: 3.5rem; }
   .hero--line-two {
-    font-size: 72px;
-    color: #084854; }
+    font-size: 3.5rem; }
   .hero--logo-bar {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap; }
@@ -350,6 +352,8 @@ NAVIGATION STYLES
     .nav li a {
       border-bottom: 0;
       text-shadow: 0px 0px 0px #fff;
+      -webkit-transition: all .2s;
+      transition: all .2s;
       /*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
@@ -357,10 +361,9 @@ NAVIGATION STYLES
       .nav li a:hover, .nav li a:focus {
         text-decoration: none;
         color: #fff;
-        text-shadow: 1px 1px #084854;
-        font-size: 1.2em;
-        font-weight: bold;
-        letter-spacing: -.1px; }
+        text-shadow: 1px 0px 4px rgba(8, 72, 84, 0.7); }
+      .nav li a:active {
+        text-shadow: 0px 0px 2px #084854; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -485,6 +488,9 @@ be seen on the Desktop.
 ******************************************************************/
 .wrap {
   width: 1040px; }
+  .wrap--homepage {
+    width: 1280px;
+    margin: 0 auto; }
 
 /*
 you can call the larger styles if you want, but there's really no need

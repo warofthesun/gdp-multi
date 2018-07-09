@@ -20,6 +20,15 @@ http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
 ******************************************************************/
 
+@mixin hero-height() {
+  height: 100vh;
+  min-height: 905px;
+}
+
+@mixin hero-height-inner() {
+  height: 120px;
+  min-height: 120px !important;
+}
 
 /*********************
 TRANSITION
@@ -69,5 +78,3 @@ probably best not to use it. I mean, were you going to anyway? */
 	-ms-box-sizing:     $type;
 	box-sizing:         $type;
 }
-
-
