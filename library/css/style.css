@@ -2016,6 +2016,16 @@ ul[id^="menu-"] {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.highlight {
+  display: inline;
+  background: rgba(59, 208, 237, 0.9);
+  padding: 0.25em; }
+
+.highlight--wrapping {
+  position: relative;
+  left: 0.25em;
+  padding-left: 0; }
+
 .wpcf7-form {
   text-align: left; }
 
@@ -2178,7 +2188,7 @@ POSTS & CONTENT STYLES
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    top: -90%; }
+    top: -75%; }
   .article__thumbnail:hover .article__thumbnail--overlay {
     bottom: 0%; }
     .article__thumbnail:hover .article__thumbnail--overlay .reveal {
@@ -2194,7 +2204,18 @@ POSTS & CONTENT STYLES
     bottom: -93%;
     height: 300px;
     -webkit-transition: all 0.4s;
-    transition: all 0.4s; }
+    transition: all 0.4s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-decoration: none;
+    color: #5c6b80; }
+    .article__thumbnail--overlay .primary-btn, .article__thumbnail--overlay .comment-reply-link, .article__thumbnail--overlay #submit {
+      margin: 0 3rem; }
     .article__thumbnail--overlay .reveal {
       background-color: #3BD0ED;
       height: 1.6rem;
