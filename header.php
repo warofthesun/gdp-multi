@@ -43,69 +43,11 @@
 		<?php // end analytics ?>
 
 	</head>
-
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-		<header class="header header--inner" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<?php if ( is_front_page() && is_home() ) { ?>
+		<div id="container">
 			<?php $custom_query = new WP_Query('pagename=site-options');
 			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
-			<div id="inner-header" class="wrap row">
-					<div class="header-nav col-xs-12">
-					<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
-						<div>
-							<img src="<?php the_field('primary_logo'); ?>">
-						</div>
-					</a>
-
-				<div class="col-xs-12 col-sm-4 menu-left">
-					<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php
-							wp_nav_menu(
-								array(
-									'container' => false,                           // remove nav container
-									'container_class' => 'menu ',                 // class of container (should you choose to use it)
-									'menu' => __( 'The Left Menu', 'bonestheme' ),  // nav name
-									'menu_class' => 'nav top-nav ',               // adding custom nav class
-									'theme_location' => 'main-nav-left',                 // where it's located in the theme
-									'before' => '',                                 // before the menu
-												'after' => '',                                  // after the menu
-												'link_before' => '',                            // before each link
-												'link_after' => '',                             // after each link
-												'depth' => 0,                                   // limit the depth of the nav
-									'fallback_cb' => '',                             // fallback function (if there is one)
-								)
-							);
-							?>
-					</nav>
-				</div>
-				<div class="col-xs-12 col-sm-4 menu-right">
-					<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php
-							wp_nav_menu(
-								array(
-								'container' => false,                           // remove nav container
-								'container_class' => 'menu ',                 // class of container (should you choose to use it)
-								'menu' => __( 'The Right Menu', 'bonestheme' ),  // nav name
-								'menu_class' => 'nav top-nav ',               // adding custom nav class
-								'theme_location' => 'main-nav-right',                 // where it's located in the theme
-								'before' => '',                                 // before the menu
-											'after' => '',                                  // after the menu
-											'link_before' => '',                            // before each link
-											'link_after' => '',                             // after each link
-											'depth' => 0,                                   // limit the depth of the nav
-								'fallback_cb' => '',                             // fallback function (if there is one)
-								)
-							);
-						?>
-					</nav>
-				</div>
-				<div id="mobile-nav" class="col-xs-12">
-					Menu <i class="fas fa-bars"></i>
-				</div>
-			</div>
-
-		</header>
-		<div id="container">
-
 			<?php
 							$attachment_id = get_field('site_image');
 							$size = "full"; // (thumbnail, medium, large, full or custom size)
@@ -114,23 +56,235 @@
 							// width = $image[1];
 							// height = $image[2];
 						?>
-			<div class="hero--background-image hero--background-image--inner" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+			<div class="hero--background-image" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+			<div class="hero">
+
+
+		<div class="overlay">
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+
+				<div id="inner-header" class="wrap row">
+						<div class="header-nav col-xs-12">
+						<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
+							<div>
+								<img src="<?php the_field('primary_logo'); ?>">
+							</div>
+						</a>
 			<?php endwhile; ?>
-			<div class="hero hero--inner">
+		<?php } elseif (is_single()) { ?>
 
+			<header class="header header--inner" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+				<?php $custom_query = new WP_Query('pagename=site-options');
+				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+				<div id="inner-header" class="wrap row">
+						<div class="header-nav col-xs-12">
+						<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
+							<div>
+								<img src="<?php the_field('primary_logo'); ?>">
+							</div>
+						</a>
 
-		<div class="overlay overlay--inner">
-			<div class="wrap hero hero--inner">
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<div class="col-xs-12 col-sm-4 menu-left">
+						<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<?php
+								wp_nav_menu(
+									array(
+										'container' => false,                           // remove nav container
+										'container_class' => 'menu ',                 // class of container (should you choose to use it)
+										'menu' => __( 'The Left Menu', 'bonestheme' ),  // nav name
+										'menu_class' => 'nav top-nav ',               // adding custom nav class
+										'theme_location' => 'main-nav-left',                 // where it's located in the theme
+										'before' => '',                                 // before the menu
+													'after' => '',                                  // after the menu
+													'link_before' => '',                            // before each link
+													'link_after' => '',                             // after each link
+													'depth' => 0,                                   // limit the depth of the nav
+										'fallback_cb' => '',                             // fallback function (if there is one)
+									)
+								);
+								?>
+						</nav>
+					</div>
+					<div class="col-xs-12 col-sm-4 menu-right">
+						<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<?php
+								wp_nav_menu(
+									array(
+									'container' => false,                           // remove nav container
+									'container_class' => 'menu ',                 // class of container (should you choose to use it)
+									'menu' => __( 'The Right Menu', 'bonestheme' ),  // nav name
+									'menu_class' => 'nav top-nav ',               // adding custom nav class
+									'theme_location' => 'main-nav-right',                 // where it's located in the theme
+									'before' => '',                                 // before the menu
+												'after' => '',                                  // after the menu
+												'link_before' => '',                            // before each link
+												'link_after' => '',                             // after each link
+												'depth' => 0,                                   // limit the depth of the nav
+									'fallback_cb' => '',                             // fallback function (if there is one)
+									)
+								);
+							?>
+						</nav>
+					</div>
+					<div id="mobile-nav" class="col-xs-12">
+						Menu <i class="fas fa-bars"></i>
+					</div>
+				</div>
 
-						<div class="hero--text">
-							<h1>
-								<span class="hero--line-one"><?php the_title(); ?></span>
-							</h1>
-						</div>
+			</header>
+			<div id="container">
 
-					</main>
-				<?php endwhile; endif ?>
-				<?php wp_reset_postdata(); ?>
-			</div>
+				<?php
+								$attachment_id = get_field('site_image');
+								$size = "full"; // (thumbnail, medium, large, full or custom size)
+								$image = wp_get_attachment_image_src( $attachment_id, $size );
+								// url = $image[0];
+								// width = $image[1];
+								// height = $image[2];
+							?>
+				<div class="hero--background-image hero--background-image--inner" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+				<?php endwhile; ?>
+				<div class="hero hero--inner">
+
+			<div class="overlay overlay--inner">
+				
+				</div>
+
+						<?php } else { ?>
+
+							<header class="header header--inner" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+								<?php $custom_query = new WP_Query('pagename=site-options');
+								while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+								<div id="inner-header" class="wrap row">
+										<div class="header-nav col-xs-12">
+										<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
+											<div>
+												<img src="<?php the_field('primary_logo'); ?>">
+											</div>
+										</a>
+
+									<div class="col-xs-12 col-sm-4 menu-left">
+										<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+											<?php
+												wp_nav_menu(
+													array(
+														'container' => false,                           // remove nav container
+														'container_class' => 'menu ',                 // class of container (should you choose to use it)
+														'menu' => __( 'The Left Menu', 'bonestheme' ),  // nav name
+														'menu_class' => 'nav top-nav ',               // adding custom nav class
+														'theme_location' => 'main-nav-left',                 // where it's located in the theme
+														'before' => '',                                 // before the menu
+																	'after' => '',                                  // after the menu
+																	'link_before' => '',                            // before each link
+																	'link_after' => '',                             // after each link
+																	'depth' => 0,                                   // limit the depth of the nav
+														'fallback_cb' => '',                             // fallback function (if there is one)
+													)
+												);
+												?>
+										</nav>
+									</div>
+									<div class="col-xs-12 col-sm-4 menu-right">
+										<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+											<?php
+												wp_nav_menu(
+													array(
+													'container' => false,                           // remove nav container
+													'container_class' => 'menu ',                 // class of container (should you choose to use it)
+													'menu' => __( 'The Right Menu', 'bonestheme' ),  // nav name
+													'menu_class' => 'nav top-nav ',               // adding custom nav class
+													'theme_location' => 'main-nav-right',                 // where it's located in the theme
+													'before' => '',                                 // before the menu
+																'after' => '',                                  // after the menu
+																'link_before' => '',                            // before each link
+																'link_after' => '',                             // after each link
+																'depth' => 0,                                   // limit the depth of the nav
+													'fallback_cb' => '',                             // fallback function (if there is one)
+													)
+												);
+											?>
+										</nav>
+									</div>
+									<div id="mobile-nav" class="col-xs-12">
+										Menu <i class="fas fa-bars"></i>
+									</div>
+								</div>
+
+							</header>
+							<div id="container">
+
+								<?php
+												$attachment_id = get_field('site_image');
+												$size = "full"; // (thumbnail, medium, large, full or custom size)
+												$image = wp_get_attachment_image_src( $attachment_id, $size );
+												// url = $image[0];
+												// width = $image[1];
+												// height = $image[2];
+											?>
+								<div class="hero--background-image hero--background-image--inner" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+								<?php endwhile; ?>
+								<div class="hero hero--inner">
+
+							<div class="overlay overlay--inner">
+								<div class="wrap hero hero--inner">
+									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+										<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+											<div class="hero--text">
+												<h1>
+													<span class="hero--line-one"><?php the_title(); ?></span>
+												</h1>
+											</div>
+
+										</main>
+									<?php endwhile; endif ?>
+									<?php wp_reset_postdata(); ?>
+								</div>
+								<div class="col-xs-12 col-sm-4 menu-left">
+ 		 						<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+ 		 							<?php
+ 		 								wp_nav_menu(
+ 		 									array(
+ 		 										'container' => false,                           // remove nav container
+ 		 										'container_class' => 'menu ',                 // class of container (should you choose to use it)
+ 		 										'menu' => __( 'The Left Menu', 'bonestheme' ),  // nav name
+ 		 										'menu_class' => 'nav top-nav ',               // adding custom nav class
+ 		 										'theme_location' => 'main-nav-left',                 // where it's located in the theme
+ 		 										'before' => '',                                 // before the menu
+ 		 													'after' => '',                                  // after the menu
+ 		 													'link_before' => '',                            // before each link
+ 		 													'link_after' => '',                             // after each link
+ 		 													'depth' => 0,                                   // limit the depth of the nav
+ 		 										'fallback_cb' => '',                             // fallback function (if there is one)
+ 		 									)
+ 		 								);
+ 		 								?>
+ 		 						</nav>
+ 		 					</div>
+ 		 					<div class="col-xs-12 col-sm-4 menu-right">
+ 		 						<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
+ 		 							<?php
+ 		 								wp_nav_menu(
+ 		 									array(
+ 		 									'container' => false,                           // remove nav container
+ 		 									'container_class' => 'menu ',                 // class of container (should you choose to use it)
+ 		 									'menu' => __( 'The Right Menu', 'bonestheme' ),  // nav name
+ 		 									'menu_class' => 'nav top-nav ',               // adding custom nav class
+ 		 									'theme_location' => 'main-nav-right',                 // where it's located in the theme
+ 		 									'before' => '',                                 // before the menu
+ 		 												'after' => '',                                  // after the menu
+ 		 												'link_before' => '',                            // before each link
+ 		 												'link_after' => '',                             // after each link
+ 		 												'depth' => 0,                                   // limit the depth of the nav
+ 		 									'fallback_cb' => '',                             // fallback function (if there is one)
+ 		 									)
+ 		 								);
+ 		 							?>
+ 		 						</nav>
+ 		 					</div>
+ 		 					<div id="mobile-nav" class="col-xs-12">
+ 		 						Menu <i class="fas fa-bars"></i>
+ 		 					</div>
+ 		 				</div>
+ 		 			</header>
+			 <? } ?>
