@@ -1,5 +1,5 @@
 <!--front-page-->
-<?php get_header(); ?>
+<?php get_header('front'); ?>
 
 				<div class="hero--content wrap" >
 					<div id="inner-content">
