@@ -266,7 +266,101 @@ function starter_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+function show_extra_fields_meta_box() {
+    global $post;
+    $meta = get_post_meta( $post->ID, 'extra_fields', true );
+    $content_url = !empty($meta['content_url']) ? $meta['content_url'] : "";
+    /*$content_type = !empty($meta['content_type']) ? $meta['content_type'] : "";*/
+    $call_to_action_text = !empty($meta['call_to_action_text']) ? $meta['call_to_action_text'] : "Download Now :";
+    $brand_logo = !empty($meta['brand_logo']) ? $meta['brand_logo'] : "";
+    $bullet_points_heading = !empty($meta['bullet_points_heading']) ? $meta['bullet_points_heading'] : "Gain exclusive knowledge on :";
+	$form_id = !empty($meta['form_id']) ? $meta['form_id'] : "2";
+    ?>
 
+    <input type="hidden" name="extra_meta_box_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+    <p>
+        <label for="extra_fields[content_url]">Content URL</label>
+        <br>
+        <input type="text" name="extra_fields[content_url]" id="extra_fields[content_url]" class="regular-text" value="<?php echo $content_url; ?>">
+    </p>
+    <!--<p>
+        <label for="your_fields[content_type]">Content Type</label>
+        <br>
+        <select name="your_fields[content_type]" id="your_fields[content_type]">
+            <option value="download" <?php selected( $content_type, 'download' ); ?>>Download</option>
+            <option value="link" <?php selected( $content_type, 'link' ); ?>>Link</option>
+        </select>
+    </p>-->
+    <p>
+        <label for="extra_fields[call_to_action_text]">Call to Action Text</label>
+        <br>
+        <input type="text" name="extra_fields[call_to_action_text]" id="extra_fields[call_to_action_text]" class="regular-text" value="<?php echo $call_to_action_text; ?>">
+    </p>
+    <p>
+        <label for="extra_fields[brand_logo]">Brand Logo Image</label><br>
+        <input type="text" name="extra_fields[brand_logo]" id="meta-image" data-frame_title="Brand Logo" data-frame_btn_title="Set Brand Logo" class="meta-image regular-text" value="<?php echo $brand_logo; ?>">
+        <input type="button" class="button image-upload" id="image-upload" value="Browse">
+    </p>
+    <div class="image-preview" id="image-preview"><img src="<?php echo $brand_logo; ?>" style="max-width: 250px;"></div>
+    <p>
+        <label for="extra_fields[bullet_points_heading]">Bullet Points Heading</label>
+        <br>
+        <input type="text" name="extra_fields[bullet_points_heading]" id="extra_fields[bullet_points_heading]" class="regular-text" value="<?php echo $bullet_points_heading; ?>">
+    </p>
+	<p>
+        <label for="extra_fields[form_id]">Form</label>
+        <br>
+        <select name="extra_fields[form_id]" id="extra_fields[form_id]">
+            <?php
+            $all_forms = array();
+            if (function_exists('ninja_forms_get_all_forms')) {
+                $all_forms = ninja_forms_get_all_forms();
+            }
+            if(!empty($all_forms))
+            {
+                foreach( $all_forms as $form ){
+                    $title = $form['data']['title'];
+                    $id    = $form['id'];
+                    ?>
+                    <option value="<?php echo esc_attr( $id );?>"<?php selected( $id, $form_id );?>>
+                        <?php echo $title;?>
+                    </option>
+                    <?php
+                }
+            }
+            ?>
+        </select>
+    </p>
+<?php }
+function save_extra_fields_meta( $post_id ) {
+    // verify nonce
+    if ( !wp_verify_nonce( $_POST['extra_meta_box_nonce'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // check autosave
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return $post_id;
+    }
+    // check permissions
+    if ( 'page' === $_POST['post_type'] ) {
+        if ( !current_user_can( 'edit_page', $post_id ) ) {
+            return $post_id;
+        } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
+            return $post_id;
+        }
+    }
+
+    $old = get_post_meta( $post_id, 'extra_fields', true );
+    $new = $_POST['extra_fields'];
+
+    if ( $new && $new !== $old ) {
+        update_post_meta( $post_id, 'extra_fields', $new );
+    } elseif ( '' === $new && $old ) {
+        delete_post_meta( $post_id, 'extra_fields', $old );
+    }
+}
+add_action( 'add_meta_boxes', 'add_extra_fields_meta_box' );
+add_action( 'save_post', 'save_extra_fields_meta' );
 /*
 This is a modification of a function found in the
 twentythirteen theme where we can declare some
