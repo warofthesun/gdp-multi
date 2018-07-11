@@ -68,7 +68,11 @@
 						<div class="header-nav col-xs-12">
 						<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
 							<div>
+								<?php if( get_field('secondary_logo')): ?>
+								<img src="<?php the_field('secondary_logo'); ?>">
+								<?php elseif( get_field('primary_logo')) : ?>
 								<img src="<?php the_field('primary_logo'); ?>">
+							<?php endif; ?>
 							</div>
 						</a>
 			<?php endwhile; ?>

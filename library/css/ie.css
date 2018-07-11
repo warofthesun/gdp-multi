@@ -160,7 +160,6 @@ them in here, they won't work.
 NAVIGATION STYLES
 *********************/
 #inner-header {
-  height: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -183,6 +182,8 @@ NAVIGATION STYLES
         -ms-flex-order: 2;
             order: 2;
     margin: auto; }
+    #inner-header .logo img {
+      max-width: 450px; }
   #inner-header .menu-left {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;

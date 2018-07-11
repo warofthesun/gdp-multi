@@ -24,7 +24,6 @@ NAVIGATION STYLES
 *********************/
 
 #inner-header {
-	height: 60px;
 	align-items: center;
 	justify-content: center;
 
@@ -37,6 +36,10 @@ NAVIGATION STYLES
 	.logo {
 		order: 2;
 		margin:auto;
+
+		img {
+			max-width: 450px;
+		}
 	}
 
 	.menu-left {
@@ -163,6 +166,15 @@ POSTS & CONTENT STYLES
 FOOTER STYLES
 *********************/
 
+#inner-footer {
+	.footer {
+		&_logo {
+			img {
+				
+			}
+		}
+	}
+}
 
 /*
 check your menus here. do they look good?

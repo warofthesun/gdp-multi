@@ -34,6 +34,8 @@ img {
 	flex-direction: column;
 }
 
+
+
 #inner-footer {
 
 	.footer_logo {
@@ -43,6 +45,7 @@ img {
 		img {
 			width: 100%;
 			height: auto;
+			max-width: 200px;
 		}
 	}
 
@@ -228,10 +231,13 @@ HEADER STYLES
 		order: 1;
 		margin-bottom: 1em;
 		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
 
 		img {
 			width: 100%;
 			height: auto;
+			max-width: 250px;
 		}
 
 		a {
@@ -409,7 +415,7 @@ ul[id^="menu-"] {
 POSTS & CONTENT STYLES
 *********************/
 
-$background-color: rgba($primary, 0.9);
+$background-color: rgba($accent, 0.9);
 $color-white: #fff;
 $title-pad: 0.25em;
 $title-lineheight: $title-pad + 1;
@@ -682,6 +688,11 @@ $title-lineheight: $title-pad + 1;
 article {
 	display: block;
 	margin: 3em 0;
+	text-align: left;
+
+	.single & {
+		margin-top: 0;
+	}
 }
 
 div[class^="content_section--"] {
@@ -1533,6 +1544,7 @@ FOOTER STYLES
 	color: $lt-gray;
 	align-items: center;
 	width: 100%;
+	padding-top: 2rem;
 
 	.physical_address {
 		order: 2;

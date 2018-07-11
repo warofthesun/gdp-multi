@@ -1735,7 +1735,8 @@ img {
   margin-top: 2em; }
   #inner-footer .footer_logo img {
     width: 100%;
-    height: auto; }
+    height: auto;
+    max-width: 200px; }
 
 #inner-footer .nav {
   opacity: 1;
@@ -1802,12 +1803,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #A09420;
+  color: #E0D03D;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #7a7118; }
+    color: #cebd21; }
   a:link, a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -1880,10 +1881,13 @@ HEADER STYLES
         -ms-flex-order: 1;
             order: 1;
     margin-bottom: 1em;
-    margin-top: 2em; }
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto; }
     .header .logo img {
       width: 100%;
-      height: auto; }
+      height: auto;
+      max-width: 250px; }
     .header .logo a {
       color: #fff; }
 
@@ -2018,7 +2022,7 @@ POSTS & CONTENT STYLES
 *********************/
 .highlight {
   display: inline;
-  background: rgba(59, 208, 237, 0.9);
+  background: rgba(224, 208, 61, 0.9);
   padding: 0.25em; }
 
 .highlight--wrapping {
@@ -2248,7 +2252,10 @@ POSTS & CONTENT STYLES
 
 article {
   display: block;
-  margin: 3em 0; }
+  margin: 3em 0;
+  text-align: left; }
+  .single article {
+    margin-top: 0; }
 
 div[class^="content_section--"] {
   padding: 0em 0 1em 0; }
@@ -2767,7 +2774,8 @@ FOOTER STYLES
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%; }
+  width: 100%;
+  padding-top: 2rem; }
   .footer .physical_address {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -2830,7 +2838,6 @@ them in here, they won't work.
 NAVIGATION STYLES
 *********************/
   #inner-header {
-    height: 60px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2853,6 +2860,8 @@ NAVIGATION STYLES
           -ms-flex-order: 2;
               order: 2;
       margin: auto; }
+      #inner-header .logo img {
+        max-width: 450px; }
     #inner-header .menu-left {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
