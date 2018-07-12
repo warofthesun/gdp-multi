@@ -5,7 +5,7 @@
 
 				<div id="inner-content" class="wrap row">
 
-					<main id="main" class="col-xs-12 col-sm-7" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="col-xs-12 col-sm-8" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -17,8 +17,26 @@
 
                 </header> <?php // end article header ?>
 
-                <section class="entry-content cf" itemprop="articleBody">
-                  <?php the_content(); ?>
+                <section class="entry-content row" itemprop="articleBody">
+
+										<div class="col-xs-12 col-sm-6">checklist</div>
+										<div class="col-xs-12 col-sm-6"><?php the_post_thumbnail('full'); ?></div>
+
+
+									<?php
+									$attachment_id = get_field('vendor_logo');
+									$size = "full"; // (thumbnail, medium, large, full or custom size)
+									$image = wp_get_attachment_image_src( $attachment_id, $size );
+									// url = $image[0];
+									// width = $image[1];
+									// height = $image[2];
+									?>
+									<div class="col-xs-12 col-sm-3 vendor-logo">
+										<img src="<?php echo $image[0]; ?>">
+									</div>
+									<div class="col-xs-12 col-sm-9">
+	                  <?php the_content(); ?>
+									</div>
                 </section> <?php // end article section ?>
 
                 <?php //comments_template(); ?>
@@ -44,7 +62,7 @@
 						<?php endif; ?>
 
 					</main>
-						<div class="col-xs-12 col-sm-5">
+						<div class="col-xs-12 col-sm-4">
 							<?php echo do_shortcode('[ninja_form id=3]'); ?>
 						</div>
 				</div>
