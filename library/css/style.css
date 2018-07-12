@@ -2436,7 +2436,8 @@ i#prev:hover, i#next:hover {
   width: 100%; }
 
 #content {
-  margin-top: 1.5em; }
+  margin-top: 1.5em;
+  width: 100%; }
 
 .hentry {
   background-color: #fff;

@@ -10,7 +10,7 @@
 				<?php wp_reset_postdata(); ?>
 
 
-	<?php include 'partials/logo-bar.php'; ?>
+	
 	</div>
 
 <?php get_footer(); ?>

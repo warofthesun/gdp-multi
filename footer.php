@@ -1,4 +1,4 @@
-
+<?php include 'partials/logo-bar.php'; ?>
 	<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 				<?php $custom_query = new WP_Query('pagename=site-options');
 				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
