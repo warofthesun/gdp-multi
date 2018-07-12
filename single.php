@@ -5,7 +5,7 @@
 
 				<div id="inner-content" class="wrap row">
 
-					<main id="main" class="col-xs-12 col-sm-8" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="col-xs-12 col-sm-7" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -44,7 +44,7 @@
 						<?php endif; ?>
 
 					</main>
-						<div class="col-xs-12 col-sm-4">
+						<div class="col-xs-12 col-sm-5">
 							<?php echo do_shortcode('[ninja_form id=3]'); ?>
 						</div>
 				</div>

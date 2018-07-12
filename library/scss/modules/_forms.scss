@@ -131,3 +131,33 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center;
 }
+
+.nf-form-cont {
+  background:rgba($lt-gray, 0.5);
+  padding: 1.2rem;
+  text-align: left;
+
+  .nf-form-title {
+    h3 {
+      color: $primary;
+      margin-top: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
+  .nf-form-fields-required {
+    display: none;
+  }
+
+    input[type=text], input[type=email] {
+      padding: .5rem;
+    }
+
+    .nf-field-label {
+      label {
+        font-weight: normal;
+        color: $text-color;
+      }
+    }
+  }

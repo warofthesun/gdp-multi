@@ -1361,7 +1361,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.primary-btn, .comment-reply-link, #submit, input[type="submit"] {
+.primary-btn, .comment-reply-link, #submit, input[type="submit"], .nf-field-element input[type=button] {
   display: inline-block;
   position: relative;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1377,11 +1377,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, input[type="submit"]:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:focus {
+  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, input[type="submit"]:hover, .nf-field-element input[type=button]:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:focus, .nf-field-element input[type=button]:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active {
+  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active, .nf-field-element input[type=button]:active {
     top: 1px; }
 
 /*
@@ -1389,11 +1389,11 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.primary-btn, .comment-reply-link, #submit, input[type="submit"] {
+.primary-btn, .comment-reply-link, #submit, input[type="submit"], .nf-field-element input[type=button] {
   background-color: #3BD0ED; }
-  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:hover, input[type="submit"]:focus, .nf-field-element input[type=button]:hover, .nf-field-element input[type=button]:focus {
     background-color: #12abc9; }
-  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active {
+  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active, .nf-field-element input[type=button]:active {
     background-color: #24caeb; }
 
 /******************************************************************
@@ -1690,6 +1690,23 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+.nf-form-cont {
+  background: rgba(232, 237, 238, 0.5);
+  padding: 1.2rem;
+  text-align: left; }
+  .nf-form-cont .nf-form-title h3 {
+    color: #3BD0ED;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 700; }
+  .nf-form-cont .nf-form-fields-required {
+    display: none; }
+  .nf-form-cont input[type=text], .nf-form-cont input[type=email] {
+    padding: .5rem; }
+  .nf-form-cont .nf-field-label label {
+    font-weight: normal;
+    color: #5c6b80; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -1838,7 +1855,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
   font-size: 2.5em;
-  line-height: 1.333em; }
+  line-height: 1.333em;
+  color: #3BD0ED; }
 
 h2, .h2 {
   font-size: 1.75em;
@@ -2411,7 +2429,8 @@ i#prev:hover, i#next:hover {
   border: 0px solid #ccc; }
   .hentry header {
     border-bottom: 1px solid #e8edee;
-    padding: 1.5em; }
+    padding: 1.5em;
+    padding-top: 0; }
   .hentry footer {
     padding: 1.5em;
     border-top: 1px solid #e8edee; }
@@ -2861,7 +2880,8 @@ NAVIGATION STYLES
               order: 2;
       margin: auto; }
       #inner-header .logo img {
-        max-width: 450px; }
+        max-width: 450px;
+        padding: .5rem 0; }
     #inner-header .menu-left {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;

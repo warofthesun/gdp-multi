@@ -183,7 +183,8 @@ NAVIGATION STYLES
             order: 2;
     margin: auto; }
     #inner-header .logo img {
-      max-width: 450px; }
+      max-width: 450px;
+      padding: .5rem 0; }
   #inner-header .menu-left {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
