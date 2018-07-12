@@ -65,9 +65,7 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'starter-thumb-600', 600, 150, true );
-add_image_size( 'starter-thumb-300', 300, 100, true );
-add_image_size( 'gallery-image', 680, 450, true );
+add_image_size( 'logo', 300, false );
 add_image_size( 'full-width', 1440, false );
 
 /*
@@ -88,7 +86,7 @@ for the 600 x 150 image:
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
-*/
+
 
 add_filter( 'image_size_names_choose', 'starter_custom_image_sizes' );
 
@@ -99,7 +97,7 @@ function starter_custom_image_sizes( $sizes ) {
         'starter-thumb-300' => __('300px by 100px'),
     ) );
 }
-
+*/
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager
@@ -108,8 +106,7 @@ duplicate one of the lines in the array and name it according to your
 new image size.
 */
 
-// TGM Plugin Activation Class
-require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-activation.php');
+
 
 /************* THEME CUSTOMIZE *********************/
 
@@ -266,101 +263,7 @@ function starter_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-function show_extra_fields_meta_box() {
-    global $post;
-    $meta = get_post_meta( $post->ID, 'extra_fields', true );
-    $content_url = !empty($meta['content_url']) ? $meta['content_url'] : "";
-    /*$content_type = !empty($meta['content_type']) ? $meta['content_type'] : "";*/
-    $call_to_action_text = !empty($meta['call_to_action_text']) ? $meta['call_to_action_text'] : "Download Now :";
-    $brand_logo = !empty($meta['brand_logo']) ? $meta['brand_logo'] : "";
-    $bullet_points_heading = !empty($meta['bullet_points_heading']) ? $meta['bullet_points_heading'] : "Gain exclusive knowledge on :";
-	$form_id = !empty($meta['form_id']) ? $meta['form_id'] : "2";
-    ?>
 
-    <input type="hidden" name="extra_meta_box_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
-    <p>
-        <label for="extra_fields[content_url]">Content URL</label>
-        <br>
-        <input type="text" name="extra_fields[content_url]" id="extra_fields[content_url]" class="regular-text" value="<?php echo $content_url; ?>">
-    </p>
-    <!--<p>
-        <label for="your_fields[content_type]">Content Type</label>
-        <br>
-        <select name="your_fields[content_type]" id="your_fields[content_type]">
-            <option value="download" <?php selected( $content_type, 'download' ); ?>>Download</option>
-            <option value="link" <?php selected( $content_type, 'link' ); ?>>Link</option>
-        </select>
-    </p>-->
-    <p>
-        <label for="extra_fields[call_to_action_text]">Call to Action Text</label>
-        <br>
-        <input type="text" name="extra_fields[call_to_action_text]" id="extra_fields[call_to_action_text]" class="regular-text" value="<?php echo $call_to_action_text; ?>">
-    </p>
-    <p>
-        <label for="extra_fields[brand_logo]">Brand Logo Image</label><br>
-        <input type="text" name="extra_fields[brand_logo]" id="meta-image" data-frame_title="Brand Logo" data-frame_btn_title="Set Brand Logo" class="meta-image regular-text" value="<?php echo $brand_logo; ?>">
-        <input type="button" class="button image-upload" id="image-upload" value="Browse">
-    </p>
-    <div class="image-preview" id="image-preview"><img src="<?php echo $brand_logo; ?>" style="max-width: 250px;"></div>
-    <p>
-        <label for="extra_fields[bullet_points_heading]">Bullet Points Heading</label>
-        <br>
-        <input type="text" name="extra_fields[bullet_points_heading]" id="extra_fields[bullet_points_heading]" class="regular-text" value="<?php echo $bullet_points_heading; ?>">
-    </p>
-	<p>
-        <label for="extra_fields[form_id]">Form</label>
-        <br>
-        <select name="extra_fields[form_id]" id="extra_fields[form_id]">
-            <?php
-            $all_forms = array();
-            if (function_exists('ninja_forms_get_all_forms')) {
-                $all_forms = ninja_forms_get_all_forms();
-            }
-            if(!empty($all_forms))
-            {
-                foreach( $all_forms as $form ){
-                    $title = $form['data']['title'];
-                    $id    = $form['id'];
-                    ?>
-                    <option value="<?php echo esc_attr( $id );?>"<?php selected( $id, $form_id );?>>
-                        <?php echo $title;?>
-                    </option>
-                    <?php
-                }
-            }
-            ?>
-        </select>
-    </p>
-<?php }
-function save_extra_fields_meta( $post_id ) {
-    // verify nonce
-    if ( !wp_verify_nonce( $_POST['extra_meta_box_nonce'], basename(__FILE__) ) ) {
-        return $post_id;
-    }
-    // check autosave
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-        return $post_id;
-    }
-    // check permissions
-    if ( 'page' === $_POST['post_type'] ) {
-        if ( !current_user_can( 'edit_page', $post_id ) ) {
-            return $post_id;
-        } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
-            return $post_id;
-        }
-    }
-
-    $old = get_post_meta( $post_id, 'extra_fields', true );
-    $new = $_POST['extra_fields'];
-
-    if ( $new && $new !== $old ) {
-        update_post_meta( $post_id, 'extra_fields', $new );
-    } elseif ( '' === $new && $old ) {
-        delete_post_meta( $post_id, 'extra_fields', $old );
-    }
-}
-add_action( 'add_meta_boxes', 'add_extra_fields_meta_box' );
-add_action( 'save_post', 'save_extra_fields_meta' );
 /*
 This is a modification of a function found in the
 twentythirteen theme where we can declare some
@@ -374,203 +277,43 @@ function starter_fonts() {
 
 add_action('wp_enqueue_scripts', 'starter_fonts');
 
+//hook into the init action and call create_bullets_nonhierarchical_taxonomy when it fires
 
+add_action( 'init', 'create_bullets_nonhierarchical_taxonomy', 0 );
 
+function create_bullets_nonhierarchical_taxonomy() {
 
+// Labels part for the GUI
 
-/**
- * Register the required plugins for this theme.
- *
- */
+  $labels = array(
+    'name' => _x( 'Bullet Points', 'taxonomy general name' ),
+    'singular_name' => _x( 'Bullet Point', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Bullet Points' ),
+    'popular_items' => __( 'Popular Bullet Points' ),
+    'all_items' => __( 'All Bullet Points' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Bullet Point' ),
+    'update_item' => __( 'Update Bullet Point' ),
+    'add_new_item' => __( 'Add New Bullet Point' ),
+    'new_item_name' => __( 'New Bullet Point Name' ),
+    'separate_items_with_commas' => __( 'Separate bullets with commas' ),
+    'add_or_remove_items' => __( 'Add or remove bullets' ),
+    'choose_from_most_used' => __( 'Choose from the most used bullets' ),
+    'menu_name' => __( 'Bullet Points' ),
+  );
 
-add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+// Now register the non-hierarchical taxonomy like tag
 
-function my_theme_register_required_plugins() {
-
-	/**
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
-	 */
-	$plugins = array(
-
-		// All-in-One Migration
-		 array(
-		 	'name'     				=> 'All-in-One WP Migration', // The plugin name
-		 	'slug'     				=> 'advanced-custom-fields', // The plugin slug (typically the folder name)
-		 	'source'   				=> 'https://downloads.wordpress.org/plugin/all-in-one-wp-migration.zip', // The plugin source
-		 	'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-		 	'version' 				=> '6.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-		 	'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-		 	'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-		 	'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		 ),
-
-
-		// Require ACF Pro
-		array(
-			'name'     				=> 'Advanced Custom Fields Pro', // The plugin name
-			'slug'     				=> 'advanced-custom-fields-pro', // The plugin slug (typically the folder name)
-			'source'   				=> get_stylesheet_directory_uri().'/library/tgm-plugin-activation/plugins/advanced-custom-fields-pro.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // GitHub Updater
-		array(
-			'name'     				=> 'GitHub Updater', // The plugin name
-			'slug'     				=> 'github-updater-develop', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://github.com/afragen/github-updater/archive/develop.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // W3 Total Cache
-		array(
-			'name'     				=> 'W3 Total Cache', // The plugin name
-			'slug'     				=> 'w3-total-cache', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/w3-total-cache.0.9.6.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '0.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // UpdraftPlus
-		array(
-			'name'     				=> 'UpdraftPlus', // The plugin name
-			'slug'     				=> 'updraftplus', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/updraftplus.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.14', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // Wordfence
-		array(
-			'name'     				=> 'Wordfence Security', // The plugin name
-			'slug'     				=> 'wordfence', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/wordfence.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '6.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // Google Analytics
-		array(
-			'name'     				=> 'Google Analytics Dashboard for WP', // The plugin name
-			'slug'     				=> 'google-analytics-dashboard-for-wp', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '5.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // Regenerate Thumbnails
-		array(
-			'name'     				=> 'Regenerate Thumbnails', // The plugin name
-			'slug'     				=> 'regenerate-thumbnails', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '3.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // Simple WP Sitemap
-		array(
-			'name'     				=> 'Simple WP Sitemap', // The plugin name
-			'slug'     				=> 'simple-wp-sitemap', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/simple-wp-sitemap.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // Smush
-		array(
-			'name'     				=> 'Smush Image Compression and Optimization', // The plugin name
-			'slug'     				=> 'wp-smushit', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/wp-smushit.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '2.7', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-    // Lazy Load
-		array(
-			'name'     				=> 'BJ LazyLoad', // The plugin name
-			'slug'     				=> 'bj-lazy-load', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://downloads.wordpress.org/plugin/bj-lazy-load.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.0.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
-	);
-
-	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'StarterTheme';
-
-	/**
-	 * Array of configuration settings. Amend each line as needed.
-	 * If you want the default strings to be available under your own theme domain,
-	 * leave the strings uncommented.
-	 * Some of the strings are added into a sprintf, so see the comments at the
-	 * end of each line for what each argument will be.
-	 */
-	$config = array(
-		'domain'       		=> $theme_text_domain,         	// Text domain - likely want to be the same as your theme.
-		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
-		'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug
-		'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug
-		'menu'         		=> 'install-required-plugins', 	// Menu slug
-		'has_notices'      	=> true,                       	// Show admin notices or not
-		'is_automatic'    	=> false,					   	// Automatically activate plugins after installation or not
-		'message' 			=> '',							// Message to output right before the plugins table
-		'strings'      		=> array(
-			'page_title'                       			=> __( 'Install Required Plugins', $theme_text_domain ),
-			'menu_title'                       			=> __( 'Install Plugins', $theme_text_domain ),
-			'installing'                       			=> __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
-			'oops'                             			=> __( 'Something went wrong with the plugin API.', $theme_text_domain ),
-			'notice_can_install_required'     			=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
-			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_activate' 					=> _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
-			'notice_ask_to_update' 						=> _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
-			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
-			'return'                           			=> __( 'Return to Required Plugins Installer', $theme_text_domain ),
-			'plugin_activated'                 			=> __( 'Plugin activated successfully.', $theme_text_domain ),
-			'complete' 									=> __( 'All plugins installed and activated successfully. %s', $theme_text_domain ), // %1$s = dashboard link
-			'nag_type'									=> 'updated' // Determines admin notice type - can only be 'updated' or 'error'
-		)
-	);
-
-	tgmpa( $plugins, $config );
-
+  register_taxonomy('bullets','post',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'bullets' ),
+  ));
 }
 
 

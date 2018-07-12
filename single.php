@@ -19,7 +19,20 @@
 
                 <section class="entry-content row" itemprop="articleBody">
 
-										<div class="col-xs-12 col-sm-6">checklist</div>
+										<div class="col-xs-12 col-sm-6">
+
+										<?php
+										$bullet_points = get_the_terms($id,'bullets');
+										$bullet_header = get_field('bullet_points_heading');
+										if (!empty($bullet_points)) {
+											echo "<h3>$bullet_header</h3>";
+											echo '<ul class="bullet-list">';
+											foreach($bullet_points as $bullet_point) {
+												echo '<li><i class="far fa-check-square"></i> '.$bullet_point->name.'</li>';
+											}
+											echo '</ul>';
+										}
+										?></div>
 										<div class="col-xs-12 col-sm-6"><?php the_post_thumbnail('full'); ?></div>
 
 
@@ -31,11 +44,13 @@
 									// width = $image[1];
 									// height = $image[2];
 									?>
-									<div class="col-xs-12 col-sm-3 vendor-logo">
-										<img src="<?php echo $image[0]; ?>">
-									</div>
-									<div class="col-xs-12 col-sm-9">
-	                  <?php the_content(); ?>
+									<div class="row vendor">
+										<div class="col-xs-12 col-sm-3 vendor-logo">
+											<img src="<?php echo $image[0]; ?>">
+										</div>
+										<div class="col-xs-12 col-sm-9">
+		                  <?php the_content(); ?>
+										</div>
 									</div>
                 </section> <?php // end article section ?>
 
@@ -63,7 +78,8 @@
 
 					</main>
 						<div class="col-xs-12 col-sm-4">
-							<?php echo do_shortcode('[ninja_form id=3]'); ?>
+							<?php $ninja_form = get_field('ninja_form_id'); ?>
+							<?php echo do_shortcode('[ninja_form id='.$ninja_form.']'); ?>
 						</div>
 				</div>
 

@@ -186,6 +186,7 @@ h2, .h2 {
 
 h3, .h3 {
 	font-size: 1.125em;
+	font-weight: 700;
 }
 
 h4, .h4 {
@@ -435,10 +436,6 @@ $title-lineheight: $title-pad + 1;
 		//					$title-pad*-1 0 0 $background-color;
 }
 
-.wpcf7-form {
-	text-align: left;
-}
-
 .inner-page {
 	.overlay {
 		background: rgba($primary, .8);
@@ -569,6 +566,13 @@ $title-lineheight: $title-pad + 1;
 	}
 }
 
+.bullet-list {
+	.far {
+		color: $primary;
+		padding-right: .5rem;
+	}
+}
+
 .articles {
 	h2 {
 		border-bottom: 1px solid $lt-gray;
@@ -693,6 +697,13 @@ article {
 
 	.single & {
 		margin-top: 0;
+
+		.vendor {
+			margin-top: 1rem;
+			padding-top: 1rem;
+			margin-bottom: 1rem;
+			border-top: 1px solid $lt-gray;
+		}
 
 		.vendor-logo img {
 			box-shadow: 0px 0px;

@@ -1690,6 +1690,9 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+.wpcf7-form {
+  text-align: left; }
+
 .nf-form-cont {
   background: rgba(232, 237, 238, 0.5);
   padding: 1.2rem;
@@ -1866,7 +1869,8 @@ h2, .h2 {
   text-transform: uppercase; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  font-weight: 700; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -2048,9 +2052,6 @@ POSTS & CONTENT STYLES
   left: 0.25em;
   padding-left: 0; }
 
-.wpcf7-form {
-  text-align: left; }
-
 .inner-page .overlay {
   background: rgba(59, 208, 237, 0.8); }
 
@@ -2168,6 +2169,10 @@ POSTS & CONTENT STYLES
         width: 100%;
         height: auto; }
 
+.bullet-list .far {
+  color: #3BD0ED;
+  padding-right: .5rem; }
+
 .articles h2 {
   border-bottom: 1px solid #e8edee;
   text-align: left;
@@ -2274,6 +2279,11 @@ article {
   text-align: left; }
   .single article {
     margin-top: 0; }
+    .single article .vendor {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+      border-top: 1px solid #e8edee; }
     .single article .vendor-logo img {
       -webkit-box-shadow: 0px 0px;
               box-shadow: 0px 0px; }
