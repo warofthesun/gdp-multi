@@ -2170,7 +2170,7 @@ POSTS & CONTENT STYLES
         height: auto; }
 
 .bullet-list .far {
-  color: #3BD0ED;
+  color: #084854;
   padding-right: .5rem; }
 
 .articles h2 {
@@ -2367,6 +2367,17 @@ div[class^="content_section--"] {
     font-weight: 200;
     color: #084854;
     font-size: 1.2em; }
+
+.content_section .contact-email, .content_section .contact-address {
+  padding-top: 1rem; }
+  .content_section .contact-email a, .content_section .contact-address a {
+    color: #3BD0ED; }
+  .content_section .contact-email .fas, .content_section .contact-address .fas {
+    color: #084854;
+    padding-right: .5rem;
+    font-size: 1.2rem;
+    bottom: -.2rem;
+    position: relative; }
 
 #carousel {
   width: 100%;

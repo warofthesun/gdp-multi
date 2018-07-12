@@ -568,7 +568,7 @@ $title-lineheight: $title-pad + 1;
 
 .bullet-list {
 	.far {
-		color: $primary;
+		color: $dark-primary;
 		padding-right: .5rem;
 	}
 }
@@ -817,6 +817,23 @@ div[class^="content_section--"] {
 				font-weight: 200;
 				color: $dark-primary;
 				font-size: 1.2em;
+			}
+		}
+	}
+
+	.contact {
+		&-email, &-address {
+			padding-top: 1rem;
+
+			a {
+				color: $primary;
+			}
+			.fas {
+				color: $dark-primary;
+				padding-right: .5rem;
+				font-size: 1.2rem;
+				bottom: -.2rem;
+				position: relative;
 			}
 		}
 	}
