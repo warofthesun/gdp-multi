@@ -2194,7 +2194,7 @@ POSTS & CONTENT STYLES
     position: relative; }
   .article__thumbnail--background-image {
     background-image: url("../images/mt-sample-background.jpg");
-    opacity: 0.7;
+    opacity: 0.8;
     position: absolute;
     width: 100%;
     top: 0px;

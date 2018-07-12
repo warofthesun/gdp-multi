@@ -316,5 +316,6 @@ function create_bullets_nonhierarchical_taxonomy() {
   ));
 }
 
+//include 'partials/custom_fields.php';
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
