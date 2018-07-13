@@ -36,7 +36,7 @@
 					</div>
 
 					<div class="physical_address col-xs-12 col-md-6 first">
-						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. <?php the_field('physical_address'); ?></p>
+						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.<br><?php the_field('physical_address'); ?></p>
 					</div>
 					<div class="social_platforms col-xs-12 col-md-6 last">
 						<?php
