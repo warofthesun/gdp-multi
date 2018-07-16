@@ -1886,11 +1886,13 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(53, 160, 182, 0.55)), to(rgba(2, 84, 100, 0.51)));
-  background-image: linear-gradient(rgba(53, 160, 182, 0.55) 0%, rgba(2, 84, 100, 0.51) 100%); }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3BD0ED), to(#12abc9));
+  background-image: linear-gradient(#3BD0ED 0%, #12abc9 100%);
+  -webkit-box-shadow: 1px 1px 3px #084854;
+          box-shadow: 1px 1px 3px #084854; }
   .header--inner {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
-    background-image: linear-gradient(white 0%, white 100%); }
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)) !important;
+    background-image: linear-gradient(white 0%, white 100%) !important; }
     .header--inner .nav li a {
       color: #3BD0ED; }
       .header--inner .nav li a:hover {
@@ -2131,7 +2133,7 @@ POSTS & CONTENT STYLES
     color: #fff;
     font-weight: 500;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6), 0px 0px 5px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.2); }
-  .hero--line-one {
+  .hero--hero-text {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: block;
     text-transform: uppercase;
@@ -3017,7 +3019,7 @@ GENERAL STYLES
     .hero--text {
       text-shadow: 0px 0px 0px #084854;
       margin-top: auto; }
-    .hero--line-one {
+    .hero--hero-text {
       font-size: 3.5rem; }
     .hero--line-two {
       font-size: 3.5rem; }

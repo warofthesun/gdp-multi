@@ -9,7 +9,7 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap  row">
+				<div id="inner-content" class="wrap row">
 						<div class="col-xs-0 col-sm-1">
 							&nbsp;
 						</div>

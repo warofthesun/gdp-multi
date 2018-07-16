@@ -206,10 +206,11 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-image: linear-gradient($gradient-1 0%, $gradient-2 100%);
+	background-image: linear-gradient($primary 0%, $md-primary 100%);
+	box-shadow: 1px 1px 3px $dark-primary;
 
 	&--inner {
-		background-image: linear-gradient(white 0%, white 100%);
+		background-image: linear-gradient(white 0%, white 100%) !important;
 
 		.nav {
 			li {
@@ -524,7 +525,7 @@ $title-lineheight: $title-pad + 1;
 		}
 	}
 
-	&--line-one {
+	&--hero-text {
 		font-family: $display;
 		display: block;
 		text-transform: uppercase;

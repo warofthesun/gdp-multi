@@ -9,12 +9,31 @@ body.site {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  color:#3BD0ED;
+  color:#3bd0ed;
   font-family:;
 }
 
-body.site a {color:#E0D03D;}
+body.site a {color:#e0d03d;}
 a:hover{color:;}
 a:active{color:;}
 a:focus{color:;}
 a:visited{color:;}
+
+
+.highlight {
+	background:#e0d03d !important;
+  opacity:0.9;
+}
+
+.header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3bd0ed), to(#12abc9)) !important;
+  background-image: linear-gradient(#3bd0ed 0%, #12abc9 100%) !important;
+  -webkit-box-shadow: 1px 1px 3px #084854 !important;
+          box-shadow: 1px 1px 3px #084854 !important; }
+
+.primary-btn, .comment-reply-link, #submit, input[type="submit"], .nf-field-element input[type=button] {
+  background-color: #3bd0ed; }
+  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:hover, input[type="submit"]:focus, .nf-field-element input[type=button]:hover, .nf-field-element input[type=button]:focus {
+    background-color: #12abc9; }
+  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active, .nf-field-element input[type=button]:active {
+    background-color: #3bd0ed; }
