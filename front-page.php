@@ -4,16 +4,15 @@
 				<div class="hero--content wrap" >
 					<div id="inner-content">
 							<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-								<?php $custom_query = new WP_Query('pagename=site-options');
-								while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+								<?php if (have_posts()) : ?>
 								<div class="hero--text">
 									<h1>
-										<span class="hero--line-one"><?php the_field('line_one'); ?></span>
-										<span class="hero--line-two"><?php the_field('line_two'); ?></span>
+										<span class="hero--line-one"><?php the_field('hero_text', 'option'); ?></span>
+
 									</h1>
-									<p><?php the_field('secondary_content'); ?></p>
+									<p><?php the_field('secondary_content', 'option'); ?></p>
 								</div>
-							<?php endwhile; ?>
+							<?php endif; ?>
 							<?php wp_reset_postdata(); ?>
 								<div class="hero--content_articles row">
 									<h2 class="col-xs-12">latest content</h2>

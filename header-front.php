@@ -44,13 +44,13 @@
 
 	</head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php body_class('site'); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
-			<?php $custom_query = new WP_Query('pagename=site-options');
-			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+			<?php if (have_posts()) : ?>
+
 			<?php
-							$attachment_id = get_field('site_image');
+							$attachment_id = get_field('site_image', 'option');
 							$size = "full"; // (thumbnail, medium, large, full or custom size)
 							$image = wp_get_attachment_image_src( $attachment_id, $size );
 							// url = $image[0];
@@ -61,21 +61,23 @@
 			<div class="hero">
 
 
+
 		<div class="overlay">
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
+			
 				<div id="inner-header" class="wrap row">
 						<div class="header-nav col-xs-12">
 						<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
 							<div>
-								<?php if( get_field('secondary_logo')): ?>
-								<img src="<?php the_field('secondary_logo'); ?>">
-								<?php elseif( get_field('primary_logo')) : ?>
-								<img src="<?php the_field('primary_logo'); ?>">
+								<?php if( get_field('secondary_logo', 'option')): ?>
+								<img src="<?php the_field('secondary_logo', 'option'); ?>">
+							<?php elseif( get_field('primary_logo', 'option')) : ?>
+								<img src="<?php the_field('primary_logo', 'option'); ?>">
 							<?php endif; ?>
 							</div>
 						</a>
-			<?php endwhile; ?>
+			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
 					<div class="col-xs-12 col-sm-4 menu-left">
 						<nav role="navigation" class="row" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php

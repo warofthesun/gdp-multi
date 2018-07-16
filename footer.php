@@ -1,23 +1,19 @@
 <?php include 'partials/logo-bar.php'; ?>
 	<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-				<?php $custom_query = new WP_Query('pagename=site-options');
-				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+				<?php if(have_posts()) : the_post(); ?>
 				<div id="inner-footer" class="wrap row">
-					<?php if( get_field('secondary_logo')): ?>
-
-
+					<?php if( get_field('secondary_logo', 'option')): ?>
 						<div class="col-xs-12 col-md-3 footer_logo">
-							<img src="<?php the_field('secondary_logo') ?>">
+							<img src="<?php the_field('secondary_logo', 'option') ?>">
 						</div>
-					<?php elseif( get_field('primary_logo') ): ?>
+					<?php elseif( get_field('primary_logo', 'option') ): ?>
 						<div class="col-xs-12 col-md-3 footer_logo">
-							<img src="<?php the_field('primary_logo') ?>">
+							<img src="<?php the_field('primary_logo', 'option') ?>">
 						</div>
 
-					<?php else: ?>
+
 						<!--nothing-->
 					<?php endif; ?>
-
 					<div class="col-xs-12 col-md-9">
 						<nav role="navigation">
 							<?php wp_nav_menu(array(
@@ -37,14 +33,14 @@
 					</div>
 
 					<div class="physical_address col-xs-12 col-md-6 first">
-						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.<br><?php the_field('physical_address'); ?></p>
+						<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.<br><?php the_field('physical_address', 'option'); ?></p>
 					</div>
 					<div class="social_platforms col-xs-12 col-md-6 last">
 						<?php
 								// check if the repeater field has rows of data
-								if( have_rows('social_platforms') ):
+								if( have_rows('social_platforms', 'option') ):
 								// loop through the rows of data
-									while ( have_rows('social_platforms') ) : the_row();
+									while ( have_rows('social_platforms', 'option') ) : the_row();
 										// display a sub field value
 									?>
 											<a href="<?php the_sub_field('social_link') ?>" class="fab fa-<?php the_sub_field('social_name')?>" target="_blank"></a>
@@ -61,7 +57,7 @@
 			</footer>
 
 
-		<?php endwhile; ?>
+		<?php endif; ?>
 		<?php // all js scripts are loaded in library/starter.php ?>
 		<?php wp_footer(); ?>
 

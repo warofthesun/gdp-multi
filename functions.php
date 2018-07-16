@@ -281,6 +281,9 @@ add_action('wp_enqueue_scripts', 'starter_fonts');
 
 add_action( 'init', 'create_bullets_nonhierarchical_taxonomy', 0 );
 
+wp_enqueue_style( 'custom-styles', get_template_directory_uri() . '/library/css/custom-styles.css' );
+
+
 function create_bullets_nonhierarchical_taxonomy() {
 
 // Labels part for the GUI
@@ -316,6 +319,39 @@ function create_bullets_nonhierarchical_taxonomy() {
   ));
 }
 
-//include 'partials/custom_fields.php';
+//Call custom-styles.php
+function generate_options_css() {
+    $ss_dir = get_stylesheet_directory();
+    ob_start(); // Capture all output into buffer
+    require($ss_dir . '/inc/custom-styles.php'); // Grab the custom-style.php file
+    $css = ob_get_clean(); // Store output in a variable, then flush the buffer
+    file_put_contents($ss_dir . '/library/css/custom-styles.css', $css, LOCK_EX); // Save it as a css file
+}
+add_action( 'acf/save_post', 'generate_options_css', 20 ); //Parse the output and write the CSS file on post save
 
+
+//include 'partials/custom_fields.php';
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+  /*
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+  */
+}
 /* DON'T DELETE THIS CLOSING TAG */ ?>

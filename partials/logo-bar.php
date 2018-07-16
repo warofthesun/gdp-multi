@@ -1,10 +1,9 @@
 <ul class="hero--logo-bar">
-  <?php $custom_query = new WP_Query('pagename=site-options');
-  while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+  <?php if(have_posts()) : ?>
   <?php
   //create a repeater loop
   // check if the repeater field has rows of data
-  if( have_rows('add_partner_logos') ): while ( have_rows('add_partner_logos') ) : the_row(); ?>
+  if( have_rows('add_partner_logos', 'option') ): while ( have_rows('add_partner_logos', 'option') ) : the_row(); ?>
 
     <?php
       $attachment_id = get_sub_field('logo');
@@ -21,6 +20,6 @@
     <?php endif; ?>
 
 
-  <?php endwhile; endif;  endwhile;?>
+  <?php endwhile; endif; endif;?>
   <?php wp_reset_postdata(); // reset the query ?>
   </ul>

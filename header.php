@@ -43,17 +43,16 @@
 		<?php // end analytics ?>
 
 	</head>
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php body_class('site'); ?> itemscope itemtype="http://schema.org/WebPage">
 	<?php if (is_single()) { ?>
 
 			<header class="header header--inner" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-				<?php $custom_query = new WP_Query('pagename=site-options');
-				while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+				<?php if(have_posts()) : the_post(); ?>
 				<div id="inner-header" class="wrap row">
 						<div class="header-nav col-xs-12">
 						<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
 							<div>
-								<img src="<?php the_field('primary_logo'); ?>">
+								<img src="<?php the_field('primary_logo', 'option'); ?>">
 							</div>
 						</a>
 
@@ -108,7 +107,7 @@
 			<div id="container">
 
 				<?php
-								$attachment_id = get_field('site_image');
+								$attachment_id = get_field('site_image', 'option');
 								$size = "full"; // (thumbnail, medium, large, full or custom size)
 								$image = wp_get_attachment_image_src( $attachment_id, $size );
 								// url = $image[0];
@@ -116,7 +115,7 @@
 								// height = $image[2];
 							?>
 				<div class="hero--background-image hero--background-image--inner" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-				<?php endwhile; ?>
+			<?php endif; ?>
 				<div class="hero hero--inner">
 
 			<div class="overlay overlay--inner">
@@ -126,13 +125,12 @@
 						<?php } else { ?>
 
 							<header class="header header--inner" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-								<?php $custom_query = new WP_Query('pagename=site-options');
-								while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+								<?php if(have_posts()) : the_post(); ?>
 								<div id="inner-header" class="wrap row">
 										<div class="header-nav col-xs-12">
 										<a href="/" rel="nofollow" class="logo col-xs-12 col-sm-4">
 											<div>
-												<img src="<?php the_field('primary_logo'); ?>">
+												<img src="<?php the_field('primary_logo', 'option'); ?>">
 											</div>
 										</a>
 
@@ -187,7 +185,7 @@
 							<div id="container">
 
 								<?php
-												$attachment_id = get_field('site_image');
+												$attachment_id = get_field('site_image', 'option');
 												$size = "full"; // (thumbnail, medium, large, full or custom size)
 												$image = wp_get_attachment_image_src( $attachment_id, $size );
 												// url = $image[0];
@@ -195,7 +193,7 @@
 												// height = $image[2];
 											?>
 								<div class="hero--background-image hero--background-image--inner" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-								<?php endwhile; ?>
+							<?php endif; ?>
 								<div class="hero hero--inner">
 
 							<div class="overlay overlay--inner">
