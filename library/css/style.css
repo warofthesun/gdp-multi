@@ -2046,8 +2046,9 @@ POSTS & CONTENT STYLES
 *********************/
 .highlight {
   display: inline;
-  background: rgba(224, 208, 61, 0.9);
-  padding: 0.25em; }
+  background: #e0d03d;
+  padding: 0.25em;
+  opacity: 0.9; }
 
 .highlight--wrapping {
   position: relative;
@@ -2120,7 +2121,7 @@ POSTS & CONTENT STYLES
         background-color: rgba(172, 192, 196, 0.3);
         margin-top: 0;
         margin-bottom: 0;
-        color: #5F7C82;
+        color: #5F7C82 !important;
         text-transform: uppercase;
         font-weight: 700;
         border-top-left-radius: 0.5rem;
@@ -2339,12 +2340,14 @@ div[class^="content_section--"] {
     text-transform: normal;
     color: #3BD0ED;
     margin-bottom: 0; }
-  .content_section--content h2 {
+  .content_section--content .sub-head {
     color: #ACC0C4;
     font-weight: 400;
     margin: 0;
-    font-size: 1.5rem;
-    text-transform: none; }
+    font-size: 1.3rem;
+    line-height: 1.2;
+    text-transform: none;
+    margin-top: 1rem; }
 
 .content_section--testimonials .testimonial {
   padding: 2em;

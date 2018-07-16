@@ -17,7 +17,7 @@
                       <?php if(get_sub_field('headline')) : ?>
                       <div class="content_section--content wrap row">
                         <h1><?php the_sub_field('headline'); ?></h1>
-                        <h2><?php the_sub_field('subhead'); ?></h2>
+                        <div class="sub-head"><?php the_sub_field('subhead'); ?></div>
                       </div>
                     <?php endif; ?>
                       <?php if( get_sub_field('body_copy') ): ?>
@@ -51,7 +51,9 @@
                     <div class="content_section content_section--half content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
                       <div class="content_section--content wrap row">
                         <h1><?php the_sub_field('headline'); ?></h1>
-                        <h2><?php the_sub_field('subhead'); ?></h2>
+                        <?php if(get_sub_field('subhead') ): ?>
+                          <div class="sub-head"><?php the_sub_field('subhead'); ?></div>
+                        <?php endif; ?>
                       </div>
 
                       <div class="content_section--<?php the_sub_field('image_alignment'); ?> wrap row">
@@ -94,7 +96,9 @@
                             <?php if(get_sub_field('headline')) : ?>
                             <div class="content_section--content wrap row">
                               <h1><?php the_sub_field('headline'); ?></h1>
-                              <h2><?php the_sub_field('subhead'); ?></h2>
+                              <?php if(get_sub_field('subhead') ): ?>
+                                <div class="sub-head"><?php the_sub_field('subhead'); ?></div>
+                              <?php endif; ?>
                             </div>
                           <?php endif; ?>
                             <div class="content_section--<?php the_sub_field('image_alignment'); ?> wrap row" style="justify-content:space-evenly;">
@@ -147,7 +151,9 @@
                                 <div class="content_section content_section--contact content_section--<?php the_sub_field('text_alignment'); ?> <?php if( get_sub_field('background_color') ): ?>background-color<?php endif; ?>">
                                   <div class="content_section--content wrap row">
                                     <h1><?php the_sub_field('headline'); ?></h1>
-                                    <h2><?php the_sub_field('subhead'); ?></h2>
+                                    <?php if(get_sub_field('subhead') ): ?>
+                                      <div class="sub-head"><?php the_sub_field('subhead'); ?></div>
+                                    <?php endif; ?>
                                   </div>
 
                                   <div class="content_section--testimonials wrap row">
@@ -193,11 +199,7 @@
 
                             <?php endwhile; endif;
                             // END TESTIMONIAL
-           endif;
-
-      endwhile;
-
-  else :
+           endif; endwhile; else :
 
       // no layouts found
 
