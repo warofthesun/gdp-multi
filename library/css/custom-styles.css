@@ -14,10 +14,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body.site a {color:#e0d03d;}
-a:hover{color:;}
-a:active{color:;}
-a:focus{color:;}
-a:visited{color:;}
+a:hover{color:#3bd0ed;}
+a:active{color:#12abc9;}
 
 
 .highlight {

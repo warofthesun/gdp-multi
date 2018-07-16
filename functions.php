@@ -330,7 +330,8 @@ function generate_options_css() {
 add_action( 'acf/save_post', 'generate_options_css', 20 ); //Parse the output and write the CSS file on post save
 
 
-//include 'partials/custom_fields.php';
+include 'partials/custom_fields.php';
+
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
