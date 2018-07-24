@@ -1,2 +1,2 @@
-# Theme for Global Demand Partners
+# GDP Sub-Brands
 Custom Wordpress theme
