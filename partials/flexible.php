@@ -107,22 +107,20 @@
                               <div class="col-xs-10 col-sm-5 first" style="order:<?php the_sub_field('align_form'); ?>">
                                 <?php the_sub_field('body_text'); ?>
                                 <?php if(get_sub_field('include_physical_address')) : ?>
-                                  <?php $custom_query = new WP_Query('pagename=site-options');
-                            			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
-                                    <?php if(get_field('physical_address')) : ?>
 
-                                      <div class="contact-address"><i class="fas fa-globe"></i><?php the_field('physical_address'); ?>
+                                    <?php if(get_field('physical_address', 'option')) : ?>
+
+                                      <div class="contact-address"><i class="fas fa-globe"></i><?php the_field('physical_address', 'option'); ?>
                                       </div>
-                                    <?php endif; endwhile; ?>
+                                    <?php endif;  ?>
                                   <?php wp_reset_postdata(); ?>
                                 <?php endif; ?>
                                 <?php if(get_sub_field('include_contact_email')) : ?>
-                                  <?php $custom_query = new WP_Query('pagename=site-options');
-                            			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
-                                    <?php if(get_field('contact_email')) : ?>
-                                      <div class="contact-email"><i class="fas fa-envelope"></i><a href="<?php the_field('contact_email'); ?>"><?php the_field('contact_email'); ?></a></div>
 
-                                    <?php endif; endwhile; ?>
+                                    <?php if(get_field('contact_email', 'option')) : ?>
+                                      <div class="contact-email"><i class="fas fa-envelope"></i><a href="<?php the_field('contact_email', 'option'); ?>"><?php the_field('contact_email', 'option'); ?></a></div>
+
+                                    <?php endif; ?>
                                   <?php wp_reset_postdata(); ?>
                                 <?php endif; ?>
                               </div>
