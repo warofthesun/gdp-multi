@@ -7,6 +7,13 @@ body.site  {
 
 #testimonial--buttons i, .content_section .contact-email a, .content_section .contact-address a, body.site h1,body.site h2,body.site h3,body.site h4,body.site h5,body.site h6, body.site a:hover {color:<?php the_field('primary','option');?>;}
 
+
+.single article img {
+  -webkit-box-shadow: 5px 5px <?php the_field('primary','option');?>;
+          box-shadow: 5px 5px <?php the_field('primary','option');?>;
+  border: 1px solid <?php the_field('primary','option');?>; }
+
+
 body.site a:active{color:<?php the_field('primary_medium','option');?>;}
 
 .content_section--testimonials .testimonial--client-name,.content_section--testimonials .testimonial--client-title, .content_section .contact-email .fas, .content_section .contact-address .fas, i#prev:hover, i#next:hover, .article__thumbnail:hover .article__thumbnail--overlay .reveal:before {color:<?php the_field('primary_dark','option');?>;}
@@ -27,6 +34,4 @@ body.site a, .highlight {color:<?php the_field('accent','option');?>;}
     background-color: <?php the_field('primary','option');?> !important; }
 
   .article__thumbnail--overlay .reveal {
-    background-color: <?php the_field('primary','option');?> !important;
-    -webkit-box-shadow: 0px -2px 2px <?php the_field('primary_dark','option');?> !important;
-            box-shadow: 0px -2px 2px <?php the_field('primary_dark','option');?> !important;}
+    background-color: <?php the_field('primary','option');?> !important;}
