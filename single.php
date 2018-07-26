@@ -5,14 +5,14 @@
 
 				<div id="inner-content" class="wrap row">
 
-					<main id="main" class="col-xs-12 col-sm-8" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
                 <header class="article-header entry-header">
-									<div>Download Your:</div>
+									<div style="padding-top:2rem;">Download Your:</div>
                   <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 
                 </header> <?php // end article header ?>
@@ -20,7 +20,9 @@
                 <section class="entry-content row" itemprop="articleBody">
 
 										<div class="col-xs-12 col-sm-6">
-
+											<p>
+												This Buyer’s Guide will provide an overview of customer relationship management (CRM) strategy, as well as detailed analysis of specific CRM software and examples of its use. If you’re not familiar with CRM yet, download our “Beginner’s Guide to CRM,” which offers a broader, more introductory look at the field.
+											</p>
 										<?php
 										$bullet_points = get_the_terms($id,'bullets');
 										$bullet_header = get_field('bullet_points_heading');
@@ -32,7 +34,9 @@
 											}
 											echo '</ul>';
 										}
-										?></div>
+										?>
+										<?php $ninja_form = get_field('ninja_form_id'); ?>
+										<?php echo do_shortcode('[ninja_form id='.$ninja_form.']'); ?></div>
 										<div class="col-xs-12 col-sm-6"><?php the_post_thumbnail('full'); ?></div>
 
 
@@ -49,7 +53,7 @@
 											<img src="<?php echo $image[0]; ?>">
 										</div>
 										<div class="col-xs-12 col-sm-9">
-		                  <?php the_content(); ?>
+		                  <p><?php the_field('vendor_description'); ?></p>
 										</div>
 									</div>
                 </section> <?php // end article section ?>
@@ -77,10 +81,7 @@
 						<?php endif; ?>
 
 					</main>
-						<div class="col-xs-12 col-sm-4">
-							<?php $ninja_form = get_field('ninja_form_id'); ?>
-							<?php echo do_shortcode('[ninja_form id='.$ninja_form.']'); ?>
-						</div>
+
 				</div>
 
 			</div>

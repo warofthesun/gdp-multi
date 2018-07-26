@@ -114,11 +114,11 @@
 								// width = $image[1];
 								// height = $image[2];
 							?>
-				<div class="hero--background-image hero--background-image--inner" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+				<div class="hero--background-image hero--background-image--inner hero--background-image--inner_single" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 			<?php endwhile; endif; ?>
 				<div class="hero hero--inner">
 
-			<div class="overlay overlay--inner">
+			<div>
 
 				</div>
 

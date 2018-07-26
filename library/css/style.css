@@ -1700,8 +1700,9 @@ select {
   .nf-form-cont .nf-form-title h3 {
     color: #3BD0ED;
     margin-top: 0;
-    font-size: 1.5rem;
-    font-weight: 700; }
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase; }
   .nf-form-cont .nf-form-fields-required {
     display: none; }
   .nf-form-cont input[type=text], .nf-form-cont input[type=email] {
@@ -2105,6 +2106,8 @@ POSTS & CONTENT STYLES
       background-attachment: local;
       -webkit-filter: grayscale(70%);
               filter: grayscale(70%); }
+      .hero--background-image--inner_single {
+        height: 100%; }
   .hero--content {
     margin: auto;
     width: 100%;
@@ -2288,7 +2291,8 @@ article {
       margin-top: 1rem;
       padding-top: 1rem;
       margin-bottom: 1rem;
-      border-top: 1px solid #e8edee; }
+      border-top: 1px solid #e8edee;
+      width: 100%; }
     .single article .vendor-logo img {
       -webkit-box-shadow: 0px 0px;
               box-shadow: 0px 0px;

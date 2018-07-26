@@ -482,6 +482,10 @@ $title-lineheight: $title-pad + 1;
 			@include hero-height-inner;
 			background-attachment: local;
 			filter: grayscale(70%);
+
+			&_single {
+				height: 100%;
+			}
 		}
 	}
 
@@ -707,6 +711,7 @@ article {
 			padding-top: 1rem;
 			margin-bottom: 1rem;
 			border-top: 1px solid $lt-gray;
+			width: 100%;
 		}
 
 		.vendor-logo img {
