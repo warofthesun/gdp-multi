@@ -20,9 +20,7 @@
                 <section class="entry-content row" itemprop="articleBody">
 
 										<div class="col-xs-12 col-sm-6">
-											<p>
-												This Buyer’s Guide will provide an overview of customer relationship management (CRM) strategy, as well as detailed analysis of specific CRM software and examples of its use. If you’re not familiar with CRM yet, download our “Beginner’s Guide to CRM,” which offers a broader, more introductory look at the field.
-											</p>
+											<?php the_content(); ?>
 										<?php
 										$bullet_points = get_the_terms($id,'bullets');
 										$bullet_header = get_field('bullet_points_heading');
