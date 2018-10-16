@@ -447,6 +447,7 @@ $title-lineheight: $title-pad + 1;
 .overlay {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 
 	&--inner {
 		@include hero-height-inner;

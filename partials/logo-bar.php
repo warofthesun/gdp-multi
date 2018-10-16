@@ -1,9 +1,10 @@
+<?php if(have_posts()) : ?>
+  <?php if( have_rows('add_partner_logos', 'option') ): ?>
 <ul class="hero--logo-bar">
-  <?php if(have_posts()) : ?>
   <?php
   //create a repeater loop
   // check if the repeater field has rows of data
-  if( have_rows('add_partner_logos', 'option') ): while ( have_rows('add_partner_logos', 'option') ) : the_row(); ?>
+   while ( have_rows('add_partner_logos', 'option') ) : the_row(); ?>
 
     <?php
       $attachment_id = get_sub_field('logo');
@@ -20,6 +21,7 @@
     <?php endif; ?>
 
 
-  <?php endwhile; endif; endif;?>
-  <?php wp_reset_postdata(); // reset the query ?>
+  <?php endwhile;?>
   </ul>
+  <?php endif; endif; ?>
+  <?php wp_reset_postdata(); // reset the query ?>

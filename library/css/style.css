@@ -1377,11 +1377,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, input[type="submit"]:hover, .nf-field-element input[type=button]:hover, .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input[type="submit"]:focus, .nf-field-element input[type=button]:focus {
+  .primary-btn:hover, .comment-reply-link:hover, #submit:hover, input:hover[type="submit"], .nf-field-element input:hover[type=button], .primary-btn:focus, .comment-reply-link:focus, #submit:focus, input:focus[type="submit"], .nf-field-element input:focus[type=button] {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .primary-btn:active, .comment-reply-link:active, #submit:active, input[type="submit"]:active, .nf-field-element input[type=button]:active {
+  .primary-btn:active, .comment-reply-link:active, #submit:active, input:active[type="submit"], .nf-field-element input:active[type=button] {
     top: 1px; }
 
 /*
@@ -2066,7 +2066,8 @@ POSTS & CONTENT STYLES
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  width: 100%; }
   .overlay--inner {
     height: 120px;
     min-height: 120px !important; }
