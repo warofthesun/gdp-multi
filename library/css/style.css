@@ -2115,7 +2115,7 @@ POSTS & CONTENT STYLES
     max-width: 1280px; }
     .hero--content_articles {
       width: 100%;
-      background-color: rgba(172, 192, 196, 0.4);
+      background-color: rgba(255, 255, 255, 0.8);
       -ms-flex-pack: distribute;
           justify-content: space-around;
       border-radius: 0.5rem;
@@ -2129,7 +2129,8 @@ POSTS & CONTENT STYLES
         text-transform: uppercase;
         font-weight: 700;
         border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem; }
+        border-top-right-radius: 0.5rem;
+        border-bottom: 2px solid; }
   .hero--text p {
     max-width: 600px;
     margin: 0 auto;
@@ -2142,8 +2143,8 @@ POSTS & CONTENT STYLES
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: block;
     text-transform: uppercase;
-    text-shadow: 1px 1px 1px #084854;
-    color: #12abc9;
+    text-shadow: 1px 1px 3px #084854;
+    color: #fff;
     font-weight: 700; }
   .hero--line-two {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2203,13 +2204,10 @@ POSTS & CONTENT STYLES
     position: relative; }
   .article__thumbnail--background-image {
     background-image: url("../images/mt-sample-background.jpg");
-    opacity: 0.5;
     position: absolute;
     width: 100%;
     top: 0px;
     height: 300px;
-    -webkit-filter: grayscale(1);
-            filter: grayscale(1);
     border-radius: 0.5rem;
     background-size: cover; }
   .article__thumbnail--title {
@@ -3092,7 +3090,6 @@ NAVIGATION STYLES
       /* showing sub-menus */ }
       .nav li a {
         border-bottom: 0;
-        text-shadow: 0px 0px 0px #fff;
         -webkit-transition: all .2s;
         transition: all .2s;
         /*

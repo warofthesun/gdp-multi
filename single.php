@@ -35,7 +35,7 @@
 										?>
 										<?php $ninja_form = get_field('ninja_form_id'); ?>
 										<?php echo do_shortcode('[ninja_form id='.$ninja_form.']'); ?></div>
-										<div class="col-xs-12 col-sm-6"><?php the_post_thumbnail('full'); ?></div>
+										<div class="col-xs-12 col-sm-6 thumbnail"><?php the_post_thumbnail('full'); ?></div>
 
 
 									<?php
