@@ -122,6 +122,20 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 
+.home {
+	#inner-header {
+		.header-nav {
+			.nav {
+				li {
+					a {
+						color: $white !important;
+					}
+				}
+			}
+		}
+	}
+}
+
 a, a:visited {
 	color: $link-color;
 

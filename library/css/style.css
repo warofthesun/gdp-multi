@@ -1827,6 +1827,9 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
+.home #inner-header .header-nav .nav li a {
+  color: #fff !important; }
+
 a, a:visited {
   color: #E0D03D;
   /* on hover */
