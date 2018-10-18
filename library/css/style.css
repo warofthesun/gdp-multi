@@ -1750,6 +1750,10 @@ img {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+.about-us {
+  text-align: left;
+  margin: 3em 0; }
+
 #inner-footer .footer_logo {
   -ms-flex-item-align: center;
       align-self: center;
@@ -2293,9 +2297,9 @@ article {
       border-top: 1px solid #e8edee;
       width: 100%; }
     .single article .vendor-logo img {
-      -webkit-box-shadow: 0px 0px;
-              box-shadow: 0px 0px;
-      border: 0px; }
+      -webkit-box-shadow: 0px 0px !important;
+              box-shadow: 0px 0px !important;
+      border: 0px !important; }
     .single article img {
       -webkit-box-shadow: 5px 5px #3BD0ED;
               box-shadow: 5px 5px #3BD0ED;

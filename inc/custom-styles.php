@@ -9,7 +9,7 @@ body.site  {
 
 .header--inner .nav li a, .nf-form-cont .nf-form-title h3 {color:<?php the_field('primary','option');?> !important;}
 
-.single article thumbnail img {
+.single article .thumbnail img {
   -webkit-box-shadow: 5px 5px <?php the_field('primary','option');?> !important;
           box-shadow: 5px 5px <?php the_field('primary','option');?> !important;
   border: 1px solid <?php the_field('primary','option');?> !important; }

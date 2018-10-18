@@ -23,6 +23,7 @@
 									      'posts_per_page' => 3,
 									   ));
 									?>
+
 									<?php if ( $the_query->have_posts() ) :  while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 									<div class="col-sm-4 article__thumbnail">
 										<div class="article__thumbnail--container">
@@ -52,6 +53,7 @@
 				<?php include 'partials/logo-bar.php'; ?>
 		</div>
 		<section class="articles wrap" style="max-Width:1035px;margin-bottom:3rem;">
+
 				<h2>All articles</h2>
 				<div class="row">
 					<?php
@@ -83,9 +85,16 @@
 						</div>
 					</div>
 				<?php endwhile; endif; ?>
+				<?php if ( get_field('about_us', 'option') ) : ?>
+					<div class="about-us">
+						<h2>About Us</h2>
+						<?php the_field('about_us', 'option'); ?>
+					</div>
+				<?php endif; ?>
 				<?php wp_reset_postdata(); ?>
 				</div>
 			</div>
+
 		</section>
 
 

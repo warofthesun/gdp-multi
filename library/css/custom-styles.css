@@ -9,7 +9,7 @@ body.site  {
 
 .header--inner .nav li a, .nf-form-cont .nf-form-title h3 {color:#4d7ea5 !important;}
 
-.single article thumbnail img {
+.single article .thumbnail img {
   -webkit-box-shadow: 5px 5px #4d7ea5 !important;
           box-shadow: 5px 5px #4d7ea5 !important;
   border: 1px solid #4d7ea5 !important; }
